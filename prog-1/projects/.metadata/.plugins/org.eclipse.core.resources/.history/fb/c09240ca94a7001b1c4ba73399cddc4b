@@ -1,0 +1,50 @@
+package clase_4;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+/*
+ * Escribir un programa que ingrese un número entero por teclado y
+realice:
+_ imprima es múltiplo de 6 y de 7 si cumple con esa condición,
+_ o imprima es mayor a 30 y múltiplo de 2 si cumple con esa
+condición,
+_ imprima si el cociente de la división de dicho número con 5 es
+mayor a 10 sin importar las condiciones previas.
+ */
+
+
+public class Ejercicio_3 {
+
+	
+	
+	public static void main(String[] args) {
+		
+		int val1 = -77;
+		final int max = 30;
+		try {
+
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			
+			System.out.println ("Ingrese su primer valor: ");
+			val1 = Integer.valueOf(entrada.readLine());
+			
+			if ((val1 %  6 == 0) && (val1 %  7 == 0) && (val1 < max)){
+				System.out.println("Es multiplo de 6 y 7");
+			}
+			else if ((val1 > max) && (val1 %  2 == 0)){
+				System.out.println("Es mayor a " + max + " y tambien es multiplo de 2:");
+			}
+			
+			
+			
+		}
+			catch (Exception exc) {
+
+			//imprimo por consola un mensaje con el valor de la variable exc (tipo de error)
+			System.out.println(exc);
+
+			}
+
+	}
+
+}

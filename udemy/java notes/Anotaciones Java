@@ -1,0 +1,2037 @@
+META: 49
+
+OBJETOS:
+	psvm -> te crea todo lo del main. 
+	Se utiliza para instanciar objetos en otra clase para ejecutar.
+	
+	soutv -> sysout con el formati "nombreVAriable" = + nombreVAriable "	
+	
+	Para instanciar:
+	Persona personal
+	personal = new Persona;
+	(Va con mayus, y tiene q ser igual) estamos declarando una variable de TIPO PERSONA.
+
+
+	MODO DEBUG:
+		1. Seleccionar punto ruptura
+		2. Marcar el método o lo que se quiera ver 
+		3. presionar f7 or "step into"
+		4. presionar f8 para avanzar la linea.
+		
+		
+	EN EL METODO
+	public int sumarConArgumentos(int arg1, int arg2)  Argumentos
+	Cuando estamos definiendo el método 
+	
+	EN EL MAIN:
+	public int sumarConArgumentos(int parametro1, int parametro2); Parametros
+	//Cuando enviamos informacion al método.
+	
+	
+	THIS
+		*Variable creada de manera automatica, que apunta al objeto que se esta 			ejeciutando en ese momento
+		*Se puede utilizar solo en la clase que estas utilizando.
+		*Metodos "statics" no pueden utilizar el this.
+		
+			
+		
+	Atributo de la clase = VERDE
+	Atributos locales = NEGRO
+	
+	CONSTRUCTORES
+		
+		*Se llaman EXACTAMENTE Igual que la clase, "public ClaseNombre(){}
+		*Se puede tener multiple constructores en una clase.
+		SOBRECARGA DE CONSTRUCTORES:
+			*Agregar un 2do constructor dentro de la misma clase
+			con diferentes argumentos.
+			
+			*this() para acceder a los constructores de la clase.
+			
+	
+	ALCANCE DE VARIABLES.
+		
+		Variables locales del metodo
+		Variables tipo OBJT
+	
+	MEMORIA STACK Y HEAP
+	
+		Memoria stack -> Variables locales.
+		Memoria Heap -> Objetos.
+		System.gc() para limpiar el Garbage collector. No se usa mucho
+	
+		Pool String -> se guarda el conjunto de caracteres para strings
+	
+	PASO POR VALOR:
+		
+		Tipos primitivos = copia
+		Objetos es "paso por valor por referencia" porque se modifica el 	original.
+	
+	RETURN & NULL
+		
+		public static Persona cambiarValor(Persona persona){
+    		if (persona == null) {
+       	 return null;
+   	 }
+   		 persona.nombre = "Carla";
+    		return persona;
+	}
+    		
+    		Desp de la palabra, corta ejecucion.
+    		
+    		Si es static void, el return; aparece pero n ose ve.
+    		
+    	ENCAPSULAMIENTO
+    		
+    		GETTER / SETTER 
+    			click derecho -> insert code -> getter and setter
+    		
+    		ToString: IMprimir el estado del objeto en cualquier momento
+    	
+    	CONTEXTO ESTATICO & DINAMICO
+    		
+    	Contexto estatico -> carga de clases
+    	Contexto dinámico -> carga de objetos
+    	ejercicio: COntextoEstatico.
+    	
+    	HERENCIA:
+    		
+    		Lo privado no es posible heredarlo.
+    		Herencia SIMPLE.
+    		CONSTRUCTORES NO SE HEREDAN. super.
+    	
+    	PALABRA FINAL:
+    		
+    		Usos : 
+    			Variables: Evita cambiar el valor que almacena la variable.
+    		
+    			Metodos: Evita que se modifique al definicion de un metodo desde una subclase
+    		
+    			Clases: Evita que se cree una subclase.
+    			
+    			Objetos: 
+    				*Al "puntero" no se le puede asignar otra direccion de memoria de otro objeto. x ej
+    				*Si se puede cambiar los atributos del objeto.
+    				
+    				final Persona p1 = new Persona()
+    				 
+        			p1 .= new Persona();
+    			
+    		*Caso "Public final static" es constante en Java 
+    		*Por convencion van en MAYUS.
+    		ej. 
+    			public final static var MI_CONSTANTE = x; 
+    		*se puede modificar el orden del public final y static
+    		*No se puede hacer un setter, pero si getter.
+    	
+    	
+    		 
+	ARREGLOS JAVA:
+		
+		Primitivos:
+			*[0|1|2|3|4|5] -> n-1 last.
+			*se define int arreglo [] = new int[3]; //[3] es la cantidad de slots del arr
+			
+		Object:
+			Ej. 
+			Persona personas[] = new Persona[2];
+			personas[0] = new Persona("Juan");
+        		personas[1] = new Persona("Pedro");
+        
+        		System.out.println("personas = " + personas[0]);
+        		System.out.println("personas = " + personas[1]);
+			
+		*El nombre se define en PLURAL
+		*Valor por default NULL
+		
+		Sintaxis resumida:
+			Definir un arr tipo string ej:
+				String frutas [] = {"Naranja, "Platano", "Uva"};
+		
+	MATRIZ
+		
+		*arreglo de arreglos. (completar)
+	
+	DISEÑO DE CLASES (PDF Nro 1)
+		
+		UML - Unified Modeling Language
+			static -> subrallado.
+			CONST -> subrallado & Mayus.
+			
+			+ejemplo -> atributo.
+			-private
+			
+	ARGUMENTOS VARIABLES:
+		
+		*Se define private static void imprimirNumeros(int...numeros){}
+		*Se crea un arreglo pero sin definir el limite.
+		*Se DEBE utilizar al final de todos los parámetros. ej (String nombre, int...numeros){}
+		
+		
+	ENUMERACION:
+		
+		Cadenas de constantes.
+		*Se reemplaza la palabra "class" por "enum" ej. public enum Dias{}
+		*Los elementos de la enumeracion por default son : public, static y final, ergo, const.
+	
+	BLOQUES DE INICIALIZACION
+		
+		*Se llaman antes del constructor	
+			ESTATICOS
+				se define static{} 
+				Se ejecutan antes de los no estaticos.
+				Se ejecuta una sola vez en memoria 
+			NO ESTATICOS
+				se define {} 
+			 	se ejecuta desp de los staticos y antes del constructor.
+				Se ejecuta cada vez que se "instancia" el obj.
+		
+	FOR EACH
+		
+		*atajo fore ej:
+		*no tenes un contador.
+		 
+		 int edades[] = {5,6,7,8};
+        
+        	for (int edad : edades) {
+            		System.out.println("edade = " + edad);
+        	}
+        
+        AUTOBOXING / UNBOXING
+        	
+        	Clase Wrapper de tipos primitivos
+        	Primitivos - clases
+        		int - Integer
+        		long - Long
+        		float - Float
+        		double - Double
+        		boolean - Boolean
+        		byte - Byte
+        		char - Character
+        		short - Short
+        
+        MODIFICADORES DE ACCESO: (De menos restrictivo a mas)
+         	
+         	Modificador	|Clase	|Variable |Metodo |Constructor  |
+        	Public		|si	|si	  |si	   |si		 |
+        	Protected	|no	|si	  |si	   |si		 |
+        	Default	|si	|si	  |si	   |si   	 |
+        	Private	|no	|si	  |si	   |si		 |
+        		
+        Public: 
+        	Puede ser utilizada en cualquier parte del project.
+        Protected: 
+        	Las clases hijas lo puede acceder, incluso desde otro paquete si hereda.
+        Default o package: 
+        	*Ausencia de modificador
+        	*Solo puede ser utilizada en el mismo paquete.	
+        Private: 
+        	Si no queremos heredar. 
+        	Solo se puede utiliar dentro de la misma clase.
+        	se lee/modifica atraves de getter o setter.
+        	
+        SOBREESCRITURA
+        	*Un metodo en la clase hija, modifica el comportamiento de la clase padre.
+        @Override 
+        	-> Modifica de cierta manera el comportamiento del metodo posterior a esta notacion.
+        	-> Se ve un icono en verde.
+        	ej.
+        		@Override
+    			public String obtenerDetalles(){
+        			return super.obtenerDetalles() + ", " + "Departamento: " + this.departamento;
+      			}
+      	POLIMORFISMO
+      		"Multiples comportamientos" 
+      		*Va por el tiempo de ejecucion.
+      		*En tiempo de ejecucion el metodo que se va a ejecutar va a ser del tipo de la referencia que haya
+      		recibido la variable.
+      		
+      		Extra: Si el padre es "protected", en la clase hija, el modificador de acceso no puede ser MAS 			restrictivo. No podriamos poner "Private", pero si protected, 		default o package o public.
+      	
+      	INSTANCE OF
+      		*Significa que vamos a poder determinar el tipo, pero en tiempo de ejecucion.
+      		*Recomendacion: Preguntar por clases especificas primero, hasta llegar a la clase object.
+        	*Solo funciona de menos a mas.
+    		*Si hacemos un cast de padre a hijo, tira error en tiempo de ejecucion "Class cast exception"
+    	
+    	CASTING
+    		Downcasting:
+    			Convertir una variable que almacena una referencia a un tipo padre, que le asignamos a una 				referencia de tipo hijo.
+    		Upcasting:
+    			CLase hija a una clase padre.
+    		EJ. ver en el project "Conversion de objetos"
+    		
+    	CLASE OBJECT
+    		
+    		*Clase RAiz de todas las clases java.lang::Object
+    		+equals():boolean, 
+    			Permite comparar el contenido de 2 objetos para saber si son iguales.
+    		+hashCOde():int,
+    			  *Permite comparar el contenido de los objetos, pero la comparacion se hace con un valor 				   entero.
+    			  Se compara ese valor unico para saber si son iguales.
+    			  *Se tine que sobreescribir el metodo equals	
+    			  
+    		COMPARAR:
+    			el "==" te dice si ambos objetos estan o no en la misma referencia de memoria.
+    			
+    		MODO DE USO:
+    			1. Se define el Equals y hashcode en la clase
+    			2. Se utiliza Equals
+    			3. Se valida el Equals con el HashCode para asegurar.
+    		
+    		Dato: Cuando trabajas con frameworks, necesitas tener estos 3 metodos declarados en las clases.
+    	
+    	CLASES ABSTRACTAS
+    		
+    		*EXTRAES CARACTERISTICAS EN COMUN
+    		
+    		*Modificador: abstract
+    		*Se define metodo abstract genérico
+    		*La clase hija tiene que definir el metodo del padre, si no lo hace, se tiene que declarar como
+    		abstracta.
+    		*No se sobreescribe, se "implementa", el ide muestra una (I) en lugar de una (o) ;)
+    		*Cuando se implementa, no se utiliza abstract.
+    		EN EL MAIN:
+    			
+    	INTERFACES (al fin..!)
+    	
+ 		*EXTRAES COMPORTAMIENTO EN COMUN
+    		
+    		public interface IEjemplo{}
+    		
+    		*No tiene constructores
+    		
+    		*TODOS los metodos dentro son ABSTRACTOS
+    		*Obliga a la clase que implementa el comportamiento definido en la interface.
+    		
+    		*Se puede crear variables tipo interface 
+    			Pero no se puede crear objeto tipo interface(Se toma una implementacion)
+    		
+    		
+    		*Si agregamos atributos, son CONSTANTES (Se asigna por default)
+    		*Si agregamos metodos, son public abstract. EJ. void insertar()
+    		
+    		MODO DE USO:
+    			1. Crear el archivo TIPO Interface.
+    			2. Generar los atributos / metodos.
+    			3. Crear una clase para implementar la interface ej:
+    				public class ImplementacionOracle implements IAccesoDAtos {}
+    				
+    	JAVA BEANS
+    		
+    		
+    		
+    		Debe cumplir:
+    			-Constructor vacio y publico
+    			-Cada Atributo tiene que ser Private
+    				tiene que tener: 
+    					-Setter & getter
+    			-Implementar interface llamada "Serializable" //Se convierte el objeto en 01, osea beans. 										para 				transferirlos
+    		
+    		 Dato: Es requerimiento para Spring o Hibernate o Java Empresarial
+    		 
+    		¿Como crear?
+    			ClaseEjemploBean.java
+    			
+    	EXCEPCIONES
+    		*Clase padre de todas las excepcioens es : Throwable
+    		*Se utiliza para no cortar la ejecucion y capturar el error.
+    		
+    		Tipos de exception:
+    			
+    			Exception -> Check exception
+    				
+    				RuntimeException -> Uncheck exception.
+    					
+    					NullPointerException
+    						*Variable que quiera acceder a 1 atributo/metodo que no este 						apuntando a ningun objeto valido.
+    						
+    				
+    				SQLException -> Uncheck exception.
+    		
+    		palabra clave
+    			throws / throw
+    			finally desp del try and catch
+    	
+    	API DE COLECCIONES 
+    		
+    		I Collection 
+    		
+    			I Set 
+    				HashSet
+    			I List
+    				ArrayList
+    				
+    		Map  (Llave - valor)
+    			HashMap 
+    	
+    	ArrayList
+    		*Se importa con java.util.*;
+    		*Se guarda cualquier tipo de objeto, y en orden.
+    		*Se pueden duplicar elementos
+    	
+    	Interface Set
+    		*Es mucho mas rapido
+    		*No guarda orden
+    		*No se pueden duplicar elementos
+    	
+    	// MY SQL // Let's go!
+    		
+    		Pass mariadb
+    			broxi
+    			warpten
+    	
+    		Instalar mariaDB
+    			configurarlo.
+    		Instalar Workbench
+    	
+    		SENTENCIAS SQL (Structured Query Language)
+    	
+    		drop database nombre;
+		drop table nombre_tabla;
+    		
+    		Las sentencias DML en SQL estandar son:
+    	
+    		SELECT
+    			SELECT * FROM persona;
+    			SELECT * FROM persona WHERE idpersona = 1;
+    		INSERT
+    			INSERT  INTO persona (nombre , apellido , mail , telefono) VALUES ('', '', ''. '');
+    		UPDATE
+    			UPDATE persona SET nombre = 'Juianito', apellido  = 'Gomez' A TODOS.
+    			UPDATE persona SET nombre = 'Juianito', apellido  = 'Gomez' WHERE idpersona  = 1;
+    		DELETE
+    			
+    			DELETE  FROM persona WHERE idpersona  = 3;
+    			
+    		JDBC (JAVA DATABASE CONNECTIVITY)
+    			
+    			*Coneccion Java con LA BD
+    			
+    		Pasos:
+    			1. Crear un new project with maven
+    			2. Editar el pom.xml con las dependencies
+    				<dependencies> 
+        				<dependency>
+        	   				 <groupId>mysql</groupId>
+        	  				 <artifactId>mysql-connector-java</artifactId>
+        	   				 <version>8.0.19</version>
+       				 </dependency>
+   				 </dependencies>
+   			3. Esto agrega el conector de la bd con java, funciona para mysql y mariadb.
+   			4. En la clase
+   				public static void main(String[] args) {
+        		var url = "jdbc:mysql://localhost:3306/test1?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        	try {
+        	    Connection conexion = DriverManager.getConnection(url,"broxi", "warpten");
+        	    Statement instruccion = conexion.createStatement();
+        	    var sql = "SELECT idpersona, nombre, apellido, mail, telefono FROM persona";
+        	    ResultSet resultado = instruccion.executeQuery(sql);
+        	    while (resultado.next()){
+        	        System.out.println("idpersona = " + resultado.getInt("idpersona"));
+        	    }
+        	} catch (SQLException ex) {
+        	    Logger.getLogger(TestMySqlJDBC.class.getName()).log(Level.SEVERE, null, ex);
+        	}
+    			}	
+			5. hay que cerrar resultado.close(); 
+				instruccion.close();
+				conexion.close();
+			
+		SINTAXIS:
+			resultado.next se para en el primero y avanza.
+			resultado.getInt("nombre del atributo del campo") -> selecciona el atributo tipo int de la tabla
+    			conexion.close() cierra los objetos
+    			//asignas a la var sql el contenido de la tabla a traves de sintaxis sql
+    			var sql = "SELECT idpersona, nombre, apellido, mail, telefono FROM persona";
+    			ResultSet resultado = instruccion.executeQuery(sql);
+    		
+    			
+    		BUENAS PRACTICAS EN EL API JDBC
+    			
+    			Crear una clase conexion en el paquete datos (no conection xk ya existe)
+    			se utiliza un CAPA DE PRESENTACION / CAPA NEGOCIO / CAPA DATOS  (como un mvc)
+    			
+    			INVESTIGAR Q ES STATEMENT PREPAREDSTATEMENT??
+    			
+    			se establecen 3 finales qq son user, pass, y url q es la cadena para conectar
+    			
+    			desp 3 clases para cerrar result, statement y connection
+    			
+    			
+    			Crear 1 clase Persona q representa cada una de las personas de la bd.
+    			
+    			Paquete DOMAIN: 
+    				"clases de entidad"  tiene representacion en bd
+    				DAO: Data Acceso Object -> es como el controller
+    					por cada clase de entidad, existe o debe existir una DAO ej
+    					Persona / PersonaDAo
+    			DATO: 
+    				EN BD es varchar
+    				En java es String
+    				
+    				EN BD   es id_persona;
+    				En java es idPersona;
+    				
+    				Hibernate lo que hace es, agarrar los datos de las tablas, y generar un objeto.
+    			
+    			DAO:
+    				//SELECT, INSERT, DELETE, UPDATE DE PERSONA x ej
+    				
+    				SELECT 
+    					rs "=" stmt.executeQuery();
+    				
+    				INSERT / UPDATE / DELETE
+    					rs "=" stmt.executeUpdate();
+    					
+    				ACTUALIZAR
+    					pasar objetos completos
+    					indicar el id,  proporcionar todos los valores 
+    					uzar constructor todos los argumentos
+    					cualquier campo.
+    				ELIMINAR
+    					Solo con el id
+    					
+    					
+    			MANEJO DE TRANSACCIONES CON JDBC
+    				
+    				Una transaccion es un conjunto de instrucciones agrupadas en un bloque de ejecución
+    				Uso de métodos en una transaccion:
+    					*autocommit. (Valores true o false)
+    					*commit. Guarda los cambios en la BD del bloque de ejecución.
+    					*rollback. Revierte los cambios realizados por el bloqeu de ejecución.
+    					
+    				Por default, la propiedad autocommit tiene el valor de true.
+    				
+    				Si cerramos la conexion del JDBC se hace un commit, incluso si se deshabilito la propiedad autocommit.
+    				
+    			PATRONES DE DISEÑO Y BUENAS PRACTICAS
+    			
+    				*Cohesion y acoplamiento
+    					*El objetivo del diseño es minimizar costos de desarrollo
+    					*La cohesion es la medida en la que un compone de software se dedica a realizar solo la tarea para la cual fue creado, 						delegando las tareas 
+    					complementarias a otros componentes
+    					*EL acoplamiento es la medida en que los cambios de un componente tiende a necesitar cambios de otro componente.
+    					*El objetivo del diseño de software es tener una ALTA COHESION y un BAJO ACOPLAMIENTO entre sus componentes de software.
+    					
+    				
+    				Capa de presentacion
+    					Administra el flujo y presentacion de las pantallas del sistema
+    				Capa Negocio
+    					Se encarga de procesar la logica de negocio y/o servicios del sistema
+    				Capa Datos
+    					Obtiene y guarda informacion de las fuentes de datos, como son: Una BD, archivo, etc.
+    			
+    			PATRONES DE DISEÑO
+    				Capa Presentacion
+    					MVC -> Modelo Vista Controlador. 
+    						Objetivo: Dividir repsponsabilidades entre 3 rubros.
+    					Front Controller >
+    						Objetivo: Entrada unica a la app, cuando el user hace una peticion.
+    					DTO(Data transfer object)
+    						Representa un objeto del dominio del problema, en ocasiones clase de entidad, que es una clase que persiste en una bd.
+    				
+    				Capa servicio
+    					Bussiness Delegate
+    						Se encarga de los detalles de llamar a algun metodo del servicio
+    					Service Locator
+    						Utilizado por el patron Business Delegate para localizar los servicios si se encuentra en algun directorio JNDI  DIRECTORY INTERFACE
+    						DTO
+    			
+    				Capa acceso Datos
+    					DAO DATA ACCES OBJECT
+    						Se encarga de extraer y almacenar info en la BD. 
+	
+		
+				Dato: Ctrl + R, renombras una variable y se renombra en todos lados.
+			
+			POOL DE CONEXIONES CON JDBC(API)
+				
+				*Permite agilizar el proceso de obtener una conexion por cada clase java que necesita una conexion
+				OBJETIVO:
+					Tener listas conexiones varias conexiones, para ser eficiente la obtencion y liberacion de una dbc
+					
+				Utilizacion:
+					1.Propia, manteniendo el propio codigo java
+					2. Utilizar projecto como x ej "JDBC de apache" la del curso
+					3. Utilizar el servidor de app java, tomCat, lastFish, jbot etc.
+			
+				
+				A LOS BIFES.
+				1. En el pom.xml, en Dependencies agregar el siguiente codigo dentro de las etiquetas  
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.commons</groupId>
+        	   				<artifactId>commons-dbcp2</artifactId>
+        	    				<version>2.7.0</version>
+					</dependency>
+				</dependencies>
+				 
+				2.En ves de usar DriverMAnager para obtener la conexion vamos a crear un metodo encargado de inicializar el objeto de pool de conexiones.
+					 public static DataSource getDataSource(){
+        	
+        				BasicDataSource ds = new BasicDataSource();
+        				ds.setUrl(JDBC_URL);
+        				ds.setUsername(JDBC_USER);
+       				 ds.setPassword(JDBC_PASS);
+       				 //Definimos el tamano inicial del pool de conexiones
+       				 ds.setInitialSize(5);
+       				 return ds;
+    				}
+    	
+    				public static Connection getConnection() throws SQLException {
+     				   return getDataSource().getConnection();
+   				 }
+					
+			En español, cambiando al forma casique de coenctarnos a la DB.
+			
+		SERVLETS Y JSP'S
+    						
+    			Introduccion a WWW (World Wide Web)
+    				Objetivo aplicacion web: procesar peticion de un cliente y mostrarsela al mismo.
+    				
+    				Arquitectura de una aplicacion web con java
+    					CLIENTE Html, Css y JS -HTTP-> 
+    						CAPA WEB JSP's, Servlets -> 
+    							CAPA NEGOCIO Objetos de Negocio -> 
+    								CAPA DATOS Objeto Entidad
+    				
+    					Capa Web(ESTE CURSO):
+    						
+    					
+    					Capa de Datos:	
+    						*Se usa JDBC
+    						-Hibernate.
+    						
+    					Capa Negocio:
+    						*Objetos java, como java beans POJOS(Plain Old Java Object)
+    						-CJV enterprise java beans
+    						-Spring
+    					
+    				PROCESO DE UNA PETICION HTTP:
+    					Cliente con Navegadores web
+    						Tomcat, Glassfish 5.0, jbot, entre otros.
+    						
+    			1. Cuando configure el Tomcat en netbeans me pidio usuario y pass que fueron
+    				broxi
+    				warpten
+    						
+    			2.
+    				Crear projecto WEB
+    				File-> new project -> java with maven -> web aplication -> next
+    						
+    						
+    			ENCODING ISO 8859-1
+    				
+    		
+    			<properties>
+			<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+			<project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
+			<maven.compiler.source>8</maven.compiler.source>
+			<maven.compiler.target>8</maven.compiler.target>
+			</properties>
+				
+	HOLA MUNDO CON SERVLETS
+	
+		Concepto:
+			Es una clase de java que permite procesar peticiones web, por el medio del protocolo HTTP.
+			(HTML, CSS, Y JS -> HTTP ->Servlets)
+		
+			Funciones:
+				View (JSP) / [Controller] (Servlet) / Model (JavaBean)
+					Papel de controlador:
+						Permite controlar el flujo de la app.
+					
+			Metodos HTTP y procesamiento:
+				
+				GET: 
+					Envia informacion del cliente al servidor por medio de una url
+					*Metodo utilizado por el Servlet doGet()
+				POST:
+					Envia informacion en el cuerpo del mensaje, no en el URL.
+					*Metodo utilizado por el Servlet doPost()
+			
+			Ciclo de vida de un servlet
+				
+				1. Se compila y se carga la clase
+				2. Se crea un subproceso(hilo) del Servlet 
+				3. Se ejecuta el metodo init() //es equivalente a un contructor
+				4. Se ejecuta el metodo service()
+					es el que se encarga indirectamente de mandar a llamar doGet, doPost etc. * No se sobreescribe a menos que sea algo avanzado.
+				5. Se ejecuta el método destroy()
+					Es el equivalente al metodo finalize, es un destructor de la clase servlet.
+						
+		*Puede responder contenido HTML al navegador, pero no es lo idea.
+		
+		Modo de uso:
+			1. Se define una clase +  extends HttpServlet + import.
+ 			2. Se agrega arriba la notacion x ej. @WebServlet("/HolaMundo")  (No me olvide el punto y coma)
+ 			3. Se hace una peticion web con el override, x ej 
+ 			@Override
+    			protected void doGet(HttpServletRequest request, HttpServletResponse response){
+        	
+    			}
+    			
+    		WAR (WEB ARCHIVE FILE)
+    			Es dodne se empaqueta nuestro project web.
+	
+	MANEJO DE PARAMETROS
+		1. En el Web Pages
+			meta-INf
+				index.html se genera el form en html
+				en el action es donde pones el nobmre del servlet
+    	
+    	REQUEST HEADERS CABECEROS DE PETICION usando api servlets "Headers" creo
+    		
+    		Permiten obtener metadatos de la peticion HTTP. Ej
+    			
+    			El metodo HTTP utilizado en la peticion (GET, POST, etc.)
+    			La IP del equipo que realizo la peticion (192.168.1.1)
+    			El dominio del equipo que realizo la peticion (www.mydomain.com)
+    		
+    		Métodos de la clase HttpServletRequest
+    		
+    			Metodos para procesar peticiones http
+    				getHeader()	
+    					permite procesar un header a la vez.
+    				getHeaders()
+    					permite procesar todos los nombres en una enumeracion.
+    				getHeaderNames
+    					permite recuperar todos los nombres relacionados con los headers.
+    			
+    			Metodos con informacion relativa al contexto:
+    				
+    				getMethod()
+    					regresa info referente al tipo de metodo ejecutado(get,post etc)
+    				getRequestURI()
+    					Permite obtener la uri con la cual se solicito recurso web
+    				getQueryString()
+    					recupera parametros que vienen posterior al signo interrogacion en un protocolo get 
+    				getProtocol()
+    					indica que protocolo se utilizo x ej http, ftp.
+    			Mas especializados
+    				
+    				getCookies()
+    					obtener todas las cookies que se almacenan/procesan en una peticion http
+    					Cookie: es un archivo que se utiliza en el navegador, para guardar ciertas preferencias del usuario.
+    				getAuthType() y getRemoteUser()
+    					procesar la seguridad en la api de los servlets y jsp
+    				getContentLength()
+    				getContentType()
+    				getDateHeader()
+    				getHeader()
+	
+	CODIGOS DE ESTADO HTTP con la api de Servlets
+		
+			Los codigo de estado se utilizan para indicar el estado de la respuesta del servidor web hacia el cliente(navegador web)
+				http/1.1 200 ok 
+					es el 200 + la cadena "ok"  significa exitoso.
+			
+			APi de servlets al usar codigos de estado
+				Estos metodos permiten indicar el codigo de respuesta del servidor web al cliente
+					
+					response.setStatus(int codigo)
+						se utiliza normalmente constantes, tales como SC_OK, SC_NOT_FOUND, etc.
+					
+					response.sendError(int codigo, String mensaje)
+						Se utiliza para mostrar el error en un documento HTML, normalmente los navegadores.
+					
+					response.sendRedirect(String url)
+						Se utiliza para indicar un redireccionamiento a otra pagina. El codigo de estado es el 302.
+				Codigo de estado HTTP mas comunes.
+					
+					200 (Ok): La respuesta fue correcta, es el codigo de estado por default.
+					204 (Sin contenido): El navegador continua desplegando el documento previo.
+					301 (Movido Permanentemente): EL documento solicitado ha cambiado de ubicacion, y posiblemente se indica la nueva ruta, 
+						en ese caso el navegador se redirecciona a la nueva pagian de manera automatica.
+					302(Encontrado): El documento se ha movido temporalmente, y el navegador se mueve al nuevo url de manera automatica.
+					401(Sin autorizacion): No se tiene permiso para visualizar el contenido solicitado, debido a que se trato de acceder a un
+						recurso protegido con contraseña sin la autorizacion respectiva.
+					404(No encontrado): El recurso solicitado no se encuentra alojado en el servidor Web.
+					500(Error interno del servidor web): El servidor web lanzo una excepcion irrecuperable por lo tanto no se puede contiunar
+						procesando la peticion. 
+	
+	HEADERS DE RESPUESTA CON SERVLETS
+		
+		Los headers de respuesta se utilizan para indicar al navegador Web como debe comportarse ante una respuesta de parte del servidor web.
+		
+		Un ejemplo comun es generar hojas de Excel, PDF's Audio, Video, etc, en lugar de solamente responder con texto.
+		
+		Para indicar el tipo de respuesta se utilizan los tipos MIME(MULTIPURPOSE INTERNET MAIL EXTENSIONS)
+		
+		Los tipos MIME son un conjunto de especificaciones con el objetivo de intercambiar archivos a traves de internet como puede ser texto, 
+			audio, video entre otros
+		
+		EJEMPLOS MAS COMUNES DE TIPOS M.I.M.E
+			
+			setContentType(Se utiliza la tabla MIME para definir su valor)
+			response.setHeader("Content-Disposition", "attachment;filename=excelEjemplo.xls");
+			
+			application/msword       	-> Microsoft Word document.
+			application/pdf    	  	-> Acrobat (.pdf) file
+			application/vnd.ms-excel 	-> Excel spreadsheet			
+			application/vnd.ms-powerpint   -> Powerpoint presentation
+			application/zip		-> Zip archive.
+			audio/x-wav			-> Microsoft windows sound file.
+			text/css 			-> HTML cascading style sheet
+			text/html 			-> HTML documento
+			text/xml 			-> XML document
+			image/gif 			-> GIF Image
+			image/jpeg 			-> JPEG image
+			image/png 			-> PNG Image
+			video/mpeg 			-> MPEG video clip
+			video/mpeg 			-> MPEG video clip
+    		
+    		API DE SERVLETS AL UTILIZAR HEADERS DE RESPUESTA
+    			
+    			Metodos para establecer valores de los headers:
+    			
+    				response.setHeader(String nombreHeader, String valorHeader),
+    				setDateHeader y setIntHeader ponen un header, si ya existe lo reemplaza.
+    				
+    				response.addHeader, addDateHeader y addIntHeader agregan nuevos valores en lugar de reemplazarlos
+    				
+    			Metodos mas comunes para establecer valores de los headers:
+    			
+    				setContentType(Se utiliza la tabla MIME para definir su valor)
+    				setContentLenght
+    				addCookie
+    				
+    			Headers de respuesta mas comunes
+    				
+    				Cache-control y pragma: Se usan para el control del cache
+    				Content-Encoding: Indica la codificacion del documento.
+    				Content-Length: Indica el numero de bytes en la respuesta
+    				Content-Type: Indica el tipo MIME a responder
+    				Expires: Indica el tiempo en que el documento se considera expirado
+    				Last-Modified: INdica el tiempo en que el documento fue modificado.
+    				Refresh: Indica los segundos en que el navegador recarga la pagina
+    				Set-COokie: Agrega una cookie al navegador
+    		
+	MANEJO DE SESIONES CON SERVLETS
+		
+		Una sesion en una aplicacion Web permite administar varias peticiones de un mismo usuario.
+		
+		La necesidad surge debido a que el protocolo HTTP es un protocolo sin estado, significa que entre peticion y peticion no gaurda ninguna informacion del usuario que realizo icha
+		peticion.
+		
+		Las sesiones en los Servlets se pueden manejar por medio de dos mecanismos:
+			[Cookies] <- Es lo que esta especificado abajo.
+			URL Rewritting
+		
+		El API de los Servlets abstrae estos conceptos en una clase llamada HTTPSession.
+		
+		CONCEPTO Y USO DE COOKIES
+			
+			Una Cookie es un archivo que contiene informacion en forma de nombre y valor, el cual se almacena en el navegador Web.
+			
+			El objetivo de una Cookie es almacenar informacion del usuario cada vez que accede a un mismo sitio, como puede ser el lenguaje preferido,
+				colores preferidos y en general las preferencias del usuario.
+				
+			Las cookies no se deben utilizar para almacenar informacion sensible, como passwords, tarjetas de credito, etc. Debido a que la informacion almacenada
+				es texto plano sin ningun tipo de encriptacion.
+				
+			Se encuentra en el paquete Javax.Servlets.Http
+			
+		API DE LAS COOKIES EN LOS SERVLETS
+			
+			Un Cookie se puede leer en una peticion HTTP(se itera el arreglo de Cookies) y se puede escribir en una respuesta HTTP.
+			
+			Creacion de un objeto Cookie:
+				Cookie c = new Cookie("usuario", "Juan");
+				c.getName();
+				c.getValue();
+				
+			Metodos para leer todas las cookies en una peticion HTTP:
+				Cookie[]cookies = request.getCookies();
+				
+			Metodo para agregar una Cookie en la respuesta:
+				response.addCookie(c);
+		
+		API DEL OBJETO COOKIE
+				
+			Metodos mas comunes en un objeto Cookie:
+			
+				getDomain/setDomain: Se utiliza para especificar el dominio de donde proviene o se va a almacenar la Cookie.
+				
+				getMaxAge/setMaxAge: Especifica el tiempo a expirar(sec)
+				
+				getName: Obtiene el nombre de la cookie, para colocar el nombre se debe usar el constructor de la clase
+				
+				getValue/setValue: Especifica el valor asociado con el nombre de la Cookie.	
+			
+	MANEJO DE SESIONES CON HTTPSESION
+		[URL Rewritting]
+			Manejo de sesiones con servlets
+			
+			request.getSession();
+				Se utiliza para obtener la sesion que se creo a partir de la peticion del cliente.
+			sesion.getAttribute();
+				Permite obtener un atributo previamente agregado a al sesion del cliente.
+			sesion.setAttribute();
+				Permite agregar nueva informacion del cliente en la sesion actual del cliente
+			sesion.removeAttribute(); 
+				Permite eliminar un atributo agregado a la sesion
+			sesion.invalidate();
+				Invalida la sesion actual del cliente
+		
+		Otros metodos importantes
+			
+			sesion.isNew();
+				Permite saber si la sesion ha sido recien creada. //Funciona solo en la primera peticion
+			sesion.getCreationTime();
+				Permite saber la fecha y hora de cuando se creo la sesion
+			sesion.getLastAccesedTime();
+				Permite conocer la ultima vez en que la sesion fue accreditada por el cliente.
+			sesion.getMaxInactiveInterval();
+				Permite conocer el tiempo de inactividad(en segundos) necesario para que la sesion se destruya si no recibe una peticion.
+			sesion.setMaxInactiveInterval();
+				Permite modificar el valor mencionado en la funcion anterior. Este valor tambien se puede modificar en el web.xml
+			
+	INTRODUCCION JSP(Java Server Pages)
+		
+		*Componentes lado del servidor web.
+			Especializados en manejar codigo html, e incrustar codigo java por medio de tags.
+		*Al compilarse se crea indirectamente un Servlet
+			por lo tanto es indirectamente un Servlet o una clas de java
+		
+		Beneficios de los JSP's
+			
+			Enfocarse en escribir codigo HTML, haciendo mas facil el mantenimiento de la capa de presentacion.
+			
+			Se puede utilizar herramientas de diseño para crear visualmente las paginas HTML e incrustar las etiquetas dinamicas de los JSP's
+			
+			Separar el cidgo de presentacion del codigo de Java.
+			
+			Cada miembro del equipo de desarrollo se puede enfocar en distintas tareas, al separar las responsabilidades.
+			
+		Funciones de un JSP
+			M[V]C 
+				Ciclo de vida de un JSP 
+					1. Se traduce el JSP a un Servlet
+					1. Se compila y se carga la clase del Servlet
+					2. Se crea un subproceso del Servlet
+					3. Se ejecuta el metodo init()
+					4. Se ejecuta el metodo service()
+					5. Se ejecuta el metodo destroy();					
+
+		Elementos de un JSP
+		
+			Expressions:
+				Sintaxis:
+					<% expresion %>
+						La expresion se evalua y se inserta en la salida del servlet
+						Es equivalente al out.println(expresion)
+			
+			Scriptlets: //Mucho codigo en un solo scriptlets es mala practica
+				Sintaxis
+					<% codigoJava %>
+						El codigo Java se inserta en el metodo service() del Servlet generado
+						Puede ser cualquier codigo java valido.
+				Declaraciones:
+					Sintaxis: 
+						<%! codigoJava %>
+						Se utiliza para agregar codigo de la clase del Servlet generado
+						Se pueden declarar variables o metodos que pertenecen a la clase
+					
+					Sintaxis XML 		
+						Cada elemento JSP tiene su equivalente en sintaxis XML
+						Esta sintaxis se utiliza para tener una mayor compatibilidad, por ej., con herramientas visuales.	
+					
+					<%! expresion
+					<%!!declarar variables
+					<%-- comentario
+					<%= expresion es como un out.print
+			
+			Variables implicitas en los JSP's
+			
+				request: 
+					Es el objeto HTTPServletRequest
+					
+				response:
+					Es el objeto HTTPServletRequest
+				
+				out: 
+					Es el objeto JspWriter (Equivalente al PrintWriter)
+				
+				session:
+					Es el objeto HttpSession asociado con el objeto request
+					Se puede deshabilitar el uso de sesiones en un JSP
+				
+				application:
+					Es el objeto ServletContext que se obtiene a partir del metodo getServletContext() en un Servlet 
+ 			 			
+		 			
+ 		Directivas en JSPs
+ 				
+ 					Las directivas nos permiten controalr el comportamiento de un JSP 
+ 					
+ 					Podemos especificar:
+ 						Las clases Java que queremos importar en un JSP
+ 						El tipo MIME utilizado
+ 						Indicar si el JSP puede acceder a la session HTTP
+ 						El tamaño del buffer de salida
+ 						Indicar la pagina JSP de error en caso de alguna Excepcion
+ 						El manejo de multihilos, entre otros
+ 						
+ 					Atributo 
+ 						import:
+ 						<%@page = import="paquete.Clase1, paquete.ClaseN"%> // va al principio como buenas practica
+ 						
+ 						contentType:
+ 							<%@page contentType="MIME-Type" %>
+ 							
+ 						session:
+ 							<%@page session ="true"%> //por default es true, con false no podes accedeer a sesssion
+ 							
+ 						isELIgnored:
+ 							<%@page isELIgnored="false"%>
+ 						
+ 						buffer:
+ 							<%@ page buffer="tamañoEnKb"%>
+ 							
+ 						errorPage
+ 							<%@page errorPage="url relativo al JSP de error%>
+ 						
+ 						isErrorPage	
+ 							<%@page isErrorPage="true"%> //te da acceso al objeto implicito exception
+ 							
+ 						isThreadSafe
+ 							<%@page is ThreadSafe="true"%> //acceso por multiples hilos.
+ 						
+ 						extends:
+ 							<%@page extends="paquete.NombreClase"%>
+			
+ 			Inclusion de archivos en JSP's
+ 			
+ 				inclusion estatica(translation time):
+ 					
+ 					<%@include file="paginaRelativa.jsp"%>
+ 				
+ 					Objetivo:
+ 						Reutilizar codigo en texto plano, HTML o JSP's
+ 						En este caso el JSP que se incluye puede afectar al JSP incluyente.
+ 						
+ 						Notas:
+ 							*En este caso no se delega el control al JSP incluido, sino que se incluye el archivo JSP, generando un unico JSP.
+ 							*Por lo anterior, se pueden tener variables o metodos que se comparten entre los JSP's.
+ 							*Para tener la version mas reciente, se recomienda compilar y construir nuevamente el proyecto.
+ 				
+ 				
+ 				Inclusion Dinamica (request time):
+ 					<jsp:include page="paginaRelativa.jsp" />			
+    				
+    					Objetivo:
+    						Reutilizar codigo en texto plano, HTMLo JSP's
+    						Permite actualizar el contenido sin alterar al JSP que incluye el contenido a reutilizar.
+    							
+    						Notas: 
+    							*EL JSP principal, delega el control al JSP incluido y la salida del JSP se agrega al JSP principal.
+    							*No se comparten variables o metodos entre los JSPs, pero garantiza tener siempre la version mas reciente.
+    							*La pagina debe ser relativa a la app web (uso de /)
+    							*Se pueden incluir archivos privados (desde la carpeta WEB-INF)
+    							
+		MANEJO DE JAVA BEANS CON JSP'S
+		
+			Los JSP's pueden acceder a los JavaBeans.
+			Un JavaBean es una clase de Java qque sigue ciertas reglas basicas:
+				Debe tener un constructor vacio
+				Todos los atributos deben ser privados
+				Se debe generar el metodo get y set pra cada atributo
+			Un JSP debe utilizar el nombre de la propiedad para acceder o modificar el atributo de un JavaBean //automaticamente hace el get 
+			
+			
+			
+			NOMBRE PROPIEDAD | NOMBRE DE LOS METODOS | CODIGO EN EL JSP
+			
+			nombreUsuario	 |getNombreUsuario	  | <jsp:getProperty ... property="nombreUsuario" />
+					 |setNombreUsuario	  | <jsp:setProperty ... property="nombreUsuario" />
+			
+			eliminado 	 |isEliminado		  |<jsp:getProperty .. property="eliminado"/>	
+					 |setEliminado		  |<jsp:setProperty .. property="eliminado"/>
+					 
+			noTelefono	 |getTelefono		  | <jsp:getProperty ... property="telefono"/>		 
+    					 |setTelefono		  | <jsp:setProperty ... property="telefono"/>
+    					 
+    			codigo_postal	 |getCodigo_postal	  | <jsp:getProperty ... property="codigo_postal"/>		 
+    					 |setCodigo_postal       | <jsp:setProperty ... property="codigo_postal"/>
+    		
+    		Alcance de atributos en un JSP (Scope)
+	
+			1ro page.
+				existe durante el tiempo q se traduce un jsp a un sv.
+			2do request
+				existe durante el tiempo que el usuario haga una peticion hasta el sv.
+			3ro session
+				Dura durante distintas peticiones hasta el sv web, se puede agregar info que va a existir al menos 30 min. A menos que modifiquemos el tiempo de sesion.
+			4to application
+				VA a existir durante todo el tiempo que este arriba nuestro servidor.
+		Uso basico de los javabeans
+		
+			jsp:useBean: Permite acceder a un bean en un alcance(scope) especificado.
+				<jsp:useBean id="nombreBean" class="paquete.NombreClase" />
+			
+			jsp:setProperty: Permite modificar una o varias propiedades de un bean especificado
+				<jsp:setProperty name="nombreBean" property="nombreUsuario" value="Juan" />
+				
+			jsp:getProperty: Permite acceder una propiedade de un bean especificado
+				<jsp:getProperty name="nombreBean" property="nombreUsuario"/>
+				
+	EXPRESSION LANGUAGE (EL)
+		
+		EL nos permite simplificar el despliegue de informacion en un JSP utilizando JavaBeans.
+		
+		Sintaxis con acciones JSP:
+		
+		<jsp:useBean id="nombreBean" class="ClaseBean"/>
+		<jsp:getProperty name="nombreBean" propiedad="nombre Propiedad"/>
+		
+		Sintaxis con Expression LAnguage(EL)
+		
+		${nombreBean.nombrePropiedad} //busca en page-> request -> session -> aplication
+		${nombreBean["nombrePropiedad"]}
+		
+		Caracteristicas de EL
+			
+			Los objetos JavaBEan a utilizar se deben agregar previamente en algun alcance(scope) por medio del metodo setAttribute() en un Servlet:
+				
+				page
+				request
+				session
+				application
+			La notacion es muy simplificada, pero solo permite la lectura de informacion(getters). No existe notacion para la modificacion de los atributos en un JavaBeans(setters).
+			
+			Permite acceder a propiedades de un JavaBean de manera anidada.
+			Ej.
+				${alumno.direccion.calle}
+				
+			Acceso a propiedades de un objetos de tipo Collection o Arreglos
+			Ej.
+				${listaPersonas[indice/llave]}
+			Nota: 
+				no es posible iterar los elementos, para ellos debemos usar JSTL
+				
+			Conversiones automaticas de tipos de datos al desplegar la informacion.
+			
+			Manejo automatico de valores null o vacios, convirtiendolos en cadenas vacias.
+			
+			Conjunto de operades MALA PRACTICA
+				${3 + 2 - 1 }
+				${"x" > "y" }
+				${3 >= 10/2 }
+		
+		Acceso a variables implicitas con EL
+		
+			Objeto pageContext. Ej.
+				${pageCOntext.session.id}
+				
+			Valores de parametros con param y paramValues.
+			Ej. ${param.nombre}
+			
+			Valores de headers con header y headerValues.
+				Ej ${header["user-agent"]} 
+			Valores con el objeto cookie
+				Ej. ${cookie.nombreCookie.value}
+				
+			Valores de atributos en algun alcance ccon pageScope, requestScope, sessionScope y applicationScope.
+			
+			Ej. ${sessionScope.rectangulo.area} o ${rectangulo.area}
+			
+			
+		JSTL(JavaServer pages Standard tag library)
+		
+			JSTL exstiende los tags de los JSP's agregando principalmente las siguientes librerias:
+				
+				core: Permite leer y manipular datos, asi como iterar, agregar condiciones y otras funciones basicas.
+				
+				xml: Permite la manipulacion y transformacion de documentos XML
+				
+				sql: Permite ejecutar consultas a una BD, asi como crear conexiones a las mismas.
+				
+				fmt: Permite dar formato a las cadenas, apoyado de conceptos como internacionalizacion(Locale)
+			
+			CONFIGURACION:
+				
+					Agregar las sigueintes librerias al Classpath (No es necesario si el sv web como glassfish, tomcat ya cuentan con estas librerias):
+					
+					standar.jar
+					jstl.jar
+					
+					CON EL SIGUIENTE CODIGO NO TE COMPLIQUES NAHUEL 
+							 <!-- JSTL -->
+       					<dependency>
+        						<groupId>javax.servlet</groupId>
+      					      		<artifactId>jstl</artifactId>
+     					       	<version>1.2</version>
+      					  	</dependency>
+    
+      					  	<dependency>
+       				     		<groupId>org.apache.taglibs</groupId>
+       				     		<artifactId>taglibs-standard-impl</artifactId>
+       				     		<version>1.2.5</version>
+      					  	</dependency>
+					
+				DIrectiva JSP:
+					
+					<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+						//se encuentra dentro de los archivos jar
+						//c de core, se usa c.lalala
+						
+					Documento JSP(jspx)
+						<html 
+							xmlsn:c = "http://java.sun.com./jsp/jstl/core"
+							xmlsns:jsp = "http://java.sun.com/JSP/Page" >
+			Libreria CORE de JSTL
+			
+				Tags de Despliegue de informacion:
+					
+					<c:out value ="${persona.nombre}">
+					
+				Tags de creacion y manipulacion de variables:
+					
+					<c:set var = "nombre" value="Carlos" scope="page" />
+					
+				Tags de Elementos condicionales:
+				
+					<c:if test="${i > 0 } /> y <c:choose> <c:when test="a"> ...
+					
+				Tags de iteracion de elementos:
+				
+					<c:forEach var"persona" items="${personas}>
+					
+				Tags de importacion de recursos web
+				
+					<c:import url = "recursoInternoExterno">
+					
+				Tags de redireccionamiento:
+				
+					<c:redirect url ="${nuevaUrl}/>
+					
+				Tagss de manejo de parametros:
+				
+					<c:import url = "c-import-param.jsp">
+						<c:param name = "nombre" value = "${param.select}" />
+					</c:import>
+
+	PATRON DE DISEÑO MVC
+	
+		Los Servlets estan enfocados en controlar el flujo de la peticion HTTP.
+		
+		Los JSP's estan enfocados en desplegar al informacion de la app Web.
+		
+		La informacion que se comparte entre los componentes (Servlets y JSP's) suele manejarse con JavaBeans.
+		
+		El patron de diseño MVC permite integrar a los JSP's (Vista), a los Servlets (Controlador) y a los JavaBeans(Modelo)
+		
+		FRAMEWORKS QUE UTILIZAN EL PATRON MVC
+		
+			JSP/Servlets:
+				Se implementa manualmente con ayuda del objeto RequestDispatcher para controlar el fliujo de la aplicacion.
+				
+				Struts: 
+					Es un frameworkde Apache, el cual utiliza JSPs(Vista) con tags de Struts, ActionFOrm(Modelo), Action(COntrolador), entre otros componentes.
+					
+				JavaServer Faces (JSF): 
+					Es una tecnologia que utiliza conceptos como JSPs(Vista) con tags de JSF, MAnagen(COntrolador) y JavaBeans(modelo)
+					
+				SpringMVC: 
+					Es una extension del framework de Spring, que utiliza JSP (Vista) con tags de Spring, Clases Java (Controladores) y JavaBeans (Modelo)
+					
+				Otros...
+			
+			ARQUITECTURA MVC CON JSP'S Y SERVLETS
+			
+				Form HTML -> POST o GET
+							-> Servlet Controlador 
+										->JavaBeans (Modelo)
+													-> Servlet Controlador 
+																->JSP(Vista)
+																		-> PAgina Resultado (HTML)
+					
+			PASOS GENERALES DE UN SERVLET CONTROLADOR
+			
+				a) Procesamos yt validamos los parametros(si aplica)
+					request.getParameter("nombreParametro");
+				b)Realizamos la logica de presentacion almacenando el resultado en JavaBeans
+					rectangulo rec = new Rectangulo();
+				c) Compartimos el objeto bean a utilizar en algun alcance(scope)
+					request.setAttribute("rectanguloBean", rec);
+								key, 		value
+				d)Redireccionamos al JSP seleccionado.
+					RequestDispatcher dispatcher = reqquest.getRequestDispatcher("resultado.jsp");
+					
+				dispatcher.forward(request, respose);				
+
+	JSF (JAVA SERVER FACES)
+	
+		¿Que es?
+			JavaServer Faces (JSF) Es el marco de aplicaciones web estandar para Java Enterprise Edition (Java EE)
+			
+			Al ser un estandar de Java, la tecnologia cuenta con el apoyo de una industria muy solida.
+			
+			La tecnologia ha crecido en su uso a nivel mundial.
+			
+			Se cuenta con un fuerte apoyo de IDEs de Java, asi como Servidores de Aplicaciones para su despliegue.
+			
+		Caracteristicas:
+			
+			MVC: Implementa el patron de diseño Modelo-Vista-Controlador
+			
+			RAD: Desarrollo rapido de aplicaciones para Web
+			
+			Componentes de interfaz de usuario: JSF tiene desarrollados componentes reutilizables listos para utilizarse
+			
+			Render-Kits: Los componentes pueden desplegarse no solamente en navegadores Web, sino en dispositivos moviels u otros tipos de clientes.
+			
+			Extensibilidad: JSF es altamente extensible debudi a su arquitectura
+			
+			Internalizacion: Las vistas pueden mostrarse en distintos idiomas.
+			
+		Nuevas caracteristicas 
+		
+			Manejo de condiciones por default mas inteligentes
+			
+			Manejo de anotaciones para varias configuraciones
+			
+			Soporte nativo para AJAX
+			
+			Soporte por default para Facelets
+			
+			Mas componentes y validadores
+			
+		Arquitectura JSF
+		
+			Cliente(HTML, CSS, Y JS) -> http -> 
+				Capa Web (JSF, Managed Bean (controller), JavaBean(Modelo), Facelets/JSP Tags(Vista)
+														-> CapaNegocio
+															-Capa DAtos Objeto Entidad
+																	-> JDBC
+		Facelets (TECNOLOGIA)
+		
+			Los facelets son la tecnologia estandar de despliegue en JSF
+			
+			Pueden ser hasta un 30% mas rapidos en el analisis y elaboracion de paginas
+			
+			Fueron creados tomando en cuenta el ciclo de vida de JSF
+			
+			Al ejecutar un Facelet, todos los componentes JSF se convierten a instancias Java y son administradas por un Component Tree
+			
+			Todos los componentes JSF se derivan de la clase abstracta javax..component.UIcomponent
+			
+			El estado de los componentes (Component Tree) puede almacenarse del lado del ciente o del lado del servidor.
+			
+		Flujo de navegacion en JSF
+		
+			1. Usuario -> peticion GET request index.faces
+			2. Envio form -> Peticion POST PaginaX.faces
+			3. Instancia el(los) Managed Bean 
+				Se revisa el archivo faces-config.xml o anotaciones
+					-Se buscan los Managed Beans
+					-Se mapean las condiciones de retorno para aplicar la navegacion(declarada o por default)
+			4. Se ejecuta el método controlador
+			5. Se ejecuta la logica y obtiene el modelo
+			6. Se selecciona la pagina Facelet o JSP 
+				Redirecciona 
+					-> resultado1.xhtml
+					-> resultado2.xhtml
+					-> resultado2.xhtml
+			7.Resultado de la peticion							
+			
+Querystring QUE ES
+Query string o, en español, cadena de consulta es un término informático que se utiliza para hacer referencia a una interacción con una base de datos. Es la parte de una URL que contiene los datos que deben pasar a aplicaciones web como los programas CGI. 
+BUSCAR
+REQUEST HTTP2 CON CURL
+
+		Concepto de managed Beans
+			
+			Un managed bean es una clase Java que sigue la nomenclatura de los JavaBeans
+				Los Managed Beans no estan obligados a extender de ninguna otra clase.
+			
+			Aunque JSF no define una clasificacion para los Backing Beans podemos definir los siguientes:
+				
+				Beans de Modelo: Representan el Modelo en el patron MVC
+				
+				Beans de Control: Representan el controlador en el patron MVC
+				
+				Beans de soporte o Helpers: Contienen codigo por ejemplo de Convertidores
+				
+				Beans de Utilerias: Tareas genericas, como obtener el objeto request.	
+
+			Uso de los Managed Beans
+				
+				Con anotaciones, antes del nombre de la clase:
+					@ManagedBean
+					
+				
+				Como bean CDI(Contexts and Dependency inyection), antes del nombre de la clase:
+					@Named
+					Agregar un archivo llamado beans.xml en la carpeta:
+					web/WEB-INF
+				
+				En el archivo faces-config.xml:
+				
+					<managed-bean>..</managed-bean>
+					
+			Alcance de los Managed Beans
+			
+				application 
+					Persiste durante toda la aplicacion
+				
+					session
+						Persiste durante el tiempo de la sesion del usuario
+				
+						view(2.0) javax.faces.bean
+						o
+						conversation(CDI) javax.enterprise.context
+							Persiste si es la misma vista
+							Util si usamos Ajax
+					
+								request
+									Persiste solo durante la peticion del usuario
+									
+			Navegacion en JSF(Cont.)
+			
+				La navegacion en JSF permite movernos entre páginas de la misma tecnologia.
+				
+				Existen varios tipos de navegacion
+					Navegacion estatica
+						aplica:
+							No se requiere ejecutar codigo Java del lado del sv, sino unciamente dirigirse a otra página
+							No hay logica para determinar la pagina siguiente.
+							ej.
+								Pagina JSF que inicia la peticion:
+									<h:commandButton label="Entrar" action="login"/>
+								La pagina siguiente se puede determinar de 2 formas:
+									a) Outcome por default, buscar directamente la página login.xhtml
+									b) Buscar el outcome en faces-config.xml, encontrando el caso que determina la siguiente página a mostrar.
+						
+					Navegacion Dinamica
+						Utiliza un metodo action, el cual tiene la lógica para determinar el outcome
+						
+						Código página JSF(Vista)
+						
+							<h:commandButton label ="Aceptar"
+							action"=" "#{loginBean.verificarUsuario}"/>
+							
+						Codigo LoginBean(Controlador)
+						
+							public String verificarUsuario(){
+								if(...)
+									return "exito";
+								else
+									return "fallo";
+							}
+													
+						
+				Existen varias formas de configurar la navegacion
+					Navegacion implicita (JSF )
+					Navegacion explicita (en el archivo faces-config.xml)
+			
+			Creacion de reglas de navegacion
+				
+				<faces-config..>
+				
+					<navegation-rule>
+						<from-view-id>/inicio.xhtml</from-view-id>
+						<navigation-case>	
+							<from-outcome>entrar</from-outcome>
+							<to-view-id>/login.xhtml</to-view-id>	
+						</navigation-case>
+					</navegation-rule>
+					
+				</faces-config..>
+	
+		Validadores en JSF 
+			3.
+				Procesamiento validadores:
+					Rangos de numeros, limites
+					Largo de cadenas
+					Formatos de fechas 
+					etc.
+				
+				Maneras de ejecutar la validacion en nuestros componentes:
+					
+					Validacion individual por campo
+						
+						Agregando un atributo requiered al tag JSF
+						Agregando un atributo validador al tag JSF
+						Agregando un validador como tag interno
+						El tag h:message se utiliza para mostrar errores de un componente.
+					
+					Validacion por campos interdependientes
+						
+						La Validacion interdependiente se ejecuta dentro de los metodos actions
+						El tag h:messages se utiliza para mostrar varios errores a la vez.
+					
+				Validacion interdependiente: Se ejecuta dentro de los metodos actions
+					
+					
+						
+				EJemplo de usos
+					estandar:
+						<h:inputText id="edadId" requiered="true" value="#{empleadoBean.edad}">
+						<f:validateLongRange minimum="18" maximum="50/>
+					personalizado:
+						<h:inputText id="ipID" requiered="true" value="#{ipBean.ipValor}">
+							<f:validator validatorId="validadorIp"/>
+						</h:inputText>
+		Convertidores en JSF
+			
+			Cubren la necesidad de asignar valores entre la vista y el modelo de manera automatica:
+				
+				Conversiones implicitas:
+					Son las conversiones que JSF realiza de manera automatica, por ej. al usar tipos primitivos, Biglnter o String
+					<h:inputText id="edadId" value="#{empleadoBean.edad}"
+				
+				Conversiones Explicitas:
+					utilizando el atributo converter, x ej.
+					<h:inputText value="#{empĺeadoBean.edad}"
+				converter"=""javax.faces.Integer"/>
+				
+				Componente tipo converter:
+				
+				<h:inputText value="#{empleadoBean.edad}">
+					<f:converter converterId="javax.faces.Integer" />
+				</h:inputText>
+				
+			Convertidores personalizados:
+				JSF permite crear convertidores personalizados.
+				
+				Pasos para crear y utilizar una clase Converter:
+					En la pagina JSF:
+						<h:inputText id="fechaId" value="#{empleadoBean.fechaNacimiento}"
+						convert"=""util.ConvertidorFecha" />
+						
+					Clase java de tipo Converter contiene el codigo del convertidor. Debe implementar la interfaz javax.faces.convert.Converter
+					
+					La clase Converter se registra en faces-config.xml o agregar la anotacion @FacesConverter a la clase de tipo Converter
+					
+	Internal	izacion en JSF
+		
+			JSF tiene soporte total para la especificacion l18n de Java, para la especificacion del idioma en la aplicacion Web
+			
+				Código del Lenguaje / Subregión | Descripcion
+				es				 | Español
+				es_Mx				 | Español/Mexico
+				en				 | Ingles
+				en_GB				 | Inglés/Britanico
+				en_US				 | Inglés/Estados Unidos
+			
+			Dato: 
+				Se puede programar en "faces-config" o en un metodo action en un bean.
+				
+			Resource Bundle en JSF
+				JSF puiede cargar las etiqquetas de un archivo de propiedades (Resource Bundle)
+				En el archivo faces-config.xml se configura el archivo a utilizar.
+				
+				faces-config.xml
+					<application>
+						<resource-bundle>
+							<base-name>mensajes</base-name> 
+							<var>msg</var>
+						</resource-bundle>
+					</application>
+				
+				Podemos utilizar el archivo de propiedades en la pagina JSF como sigue:
+					//notacion similar a arreglos
+					<h:outputText value="#{msg['form.usuario']}" />
+					<h:commandButton value="{msg.enviar}" type="submit" action="login" />
+					
+			Sobreescritura de Mensajes JSF
+				
+				Se debe crear un archivo(no importa el nombre) de propiedades.
+					jsf.properties
+				Se sobreescriben los mensajes del sistema deseados.
+					javax.faces.component.UIInput.REQUIERED=Valor Requerido
+			Se configura en el archivo faces-config.xml
+					<application>
+							<message-bundle>jsf</message-bundle>
+				</application>
+	
+		VALUE CHANGE LISTENERS en SF
+		
+			JSF provee dos maneras de detectar cambios (value change) en los componentes, ya sea agregando un atributo valueChangeListener al componente o como un elemento interno.
+			Por ej.
+		
+			<h:inputText id="codigoPostal" onchange="this.form.submit()"
+			value'='"{empleadoBean.codigoPostal}"
+			valueChangeListener'='#{vacanteForm.codigoPostalListener}" />
+					
+			Una vez definido el atributo o elemento interno, se debe agregar el método action en el Managed Bean que escucha el cambio en la Vista.
+			
+		public void codigoPostalListener(ValueChangeEvent valueChangeEvent) {...}
+	 	
+		COMPONENTES HTML EN JSF 
+(Primefaces.org	) // Empresa con componentes mas avanzados para JSF
+		
+		El API de JSF provee varios componentes basicos par ael despliegue de informacion HTML
+		
+			<h:form />			h:inputText />			h:inputTextarea />
+			h:inputSecret />		h:inputHidden />		h:outputLabel />
+		h:outputLink />		h:outputFormat />		h:outputText />
+			h:commandButton />		h:commandLink />		h:message />
+			h:messages />			h:panelGrid />			h:panelGroup />
+			h:dataTable />			h:column />			h:selectOneListbox />
+		h:selectOneRadio />		h:selectBooleanCheckbox />	h:selectManyCheckbox />
+			h:selectManyListbox />		h:selectManyMenu />		
+		
+			Componentes Core de JSF
+				El api de JSF provee varios componentes core para el manejo de eventos, administracion de componentes, entre otros.
+		
+			<f:view />			<f:subview />			<f:facet />
+			<f:attribute />		<f:param />			<f:actionListener />
+		<f:valueChangeListener />	<f:converter />		<f:convertDateTime />
+			<f:convertNumber />		<f:validator />		<f:validateDoubleRange />
+			<f:validateLength />		<f:validateLongRange />	<f:loadBundle />
+			<f:selectItems />		<f:selectItem />		<f:verbatim />
+		
+		Componentes de seleccion en JSF
+				El api de JSF provee distintos tipos de componentes de seleccion:
+				
+				<h: selectOneListbox />
+			<h:selectOneMenu />
+				<h:selectOneRadio />
+				<h:SelectBooleanCheckbox />
+			<h:selectManyCheckbox />
+				<h:selectManyListbox />
+				<h:selectManyMenu />
+			
+				www.corejsf.com/jsf-tags.html
+		
+			Select Items en JSF
+		
+			Los componentes JSF tales como h:selectOneMenu muestran una lista de datos, los cuales se conocen como Select Items (elementos de seleccion)
+			
+			Lista de elementos Select Item ligada a una propiedad del Managed Bean:
+				<h:selectOneMenu>
+				<f:selectItem value="#{coloniaHelper.coloniaSelectitems}" />
+				</h:selectOneMenu>
+		
+			Lista elementos en código duro en la página JSF:
+			
+				<h:selectOneMenu>
+				<f:selectItems>
+						<f:selectItem itemLabel="Rojo" itemValue="rojo" />
+						<f:selectItem itemLabel="Rojo" itemValue="verde" />
+						<f:selectItem itemLabel="Rojo" itemValue="azul" />
+				</h:selectOneMenu>
+		
+				Dato: No se puede desplegar directamente un arr, coleccion o alguna coleccion de items una lista. 
+					Porque hay que convertirlos a tipos selectItems, mostrandolos uno a uno o mostrandolo como una coleccion de objetos select item
+		
+		
+		Arquitectura de Componentes JSF
+
+			Un componente JSF se compone de 3 partes:
+				
+				1.( Codigo pagina JSF)
+				<<etiqueta JSF>>
+					h:inputText
+				2.( Codigo HTML que visualiza el cliente)
+					<<despliegue COmponente>>>
+					ElementoHTML
+				3.(Código java en el ManagedBean)
+				<<Componente JSF UI>>
+					HTMLInputTExt 
+					
+			Facelets en JSF
+			
+				Caracteristicas
+					
+					Los Facelets es la tecnologia estandar de despliegue en JSF
+				
+					Los Facelets eliminan completamente la necesidad de los JSP's
+					
+					Utilizan un parser XML en lugar del compilador de JSP
+				
+					Comparado con JSP, los Facelets crean un componente tree mas ligero
+					
+					Soporte para Templates
+					
+					Creacion de componentes compuestos
+					
+				Los Facelets no son JSPs
+				
+					Dentro de una página Facelet NO es posible utilizar los siguientes taglib de JSP
+					
+						<jsp:root/>
+						<jsp:directive.include.../>
+						<jsp:output.../>
+						<jsp:directive.content.../>
+					
+					Sin embargo, SI es posible utilizar los tags de JSTL en los Facelets:
+					
+						<c:forEach.. />
+						<c:if.../>
+						<c:catch.../>
+				
+				Plantillas con Facelets
+				
+					Las plantillas definen las regiones lógicas de una página JSF
+					
+						|Header|
+					    |Menú||[Contenido]|
+					      	|Footer|			
+				
+				-Template(Plantilla): Página utilizada para controalr el layout
+					(disposicion de los elementos)
+					
+				Componentes compuestos
+				
+					La creacion de nuevos componentes JSF requerían de crear clases Java.
+					
+					Los facelets permiten crear componentes reutilizables combinado HTML y tags de JSF:
+						
+						Permite la reutilizacion de otros componentes
+						Se definen en un archivo XHTML, no en clases Java.
+					
+					Los componentes compuestos son básicamente templates asociados a un tag library personalizado.
+					
+					Para referenciar un componente compuesto basta con importar el namespace en el XHTML.	
+					
+					
+	INTRO JAVA EMPRESARIAL JAVA EE	
+	
+		*EJB's (Enterprise Java Beans)
+	
+		*Java Persistance API
+		
+		*Servlets y JSP's
+			Integracion con Servlets y JSP's
+			
+		*JSF
+			Integracion con Java Server Faces
+			
+		*Web Services (SOAP & REST)
+		
+		*Segurdad en Java EE
+		
+		Integrando todo:
+			Aplicacion web del mundo real con JSF, PrimeFaces ajax, EJB's JPA, Web Services y Seguridad
+			
+		Java Empresarial
+		
+			¿Que es JAVA EE?
+				
+				*Un API es un conjunto de clases que nos permiten resolver una necesidad muy particular.
+				
+				*Java EE es un conjunto de APIs enfocadas en brintar servicios empresariales, ej:
+				
+					*Transaccionalidad
+					*Seguridad
+					*Interoperabilidad
+					*etc...
+				
+				*Algunas de las APIs Empresariales de Java son:
+				
+					*JTA- JAva Transaction API
+					*JPA- JAva Persistance API
+					*JMS- Java Message Service
+					etc...
+					
+		Historial de las versiones empresariales Java
+		
+			Project JPE (May 1998)
+			Aplicaciones Empresariales (Dic 1999 10 specs)
+				J2EE 1.2, Servlet, JSP, EJB, JMS, RM/IIOP
+			Robusto Escalable(Sept 2001 13 specs)
+				EJB CMP, JCA
+			Web Services (Nov 2003 20 specs)
+				J2EE1.4, Web Services Management Deployment 
+			Facilidad de desarrollo (May 2006 23 specs)
+				Annotations, Injection, JPA, WS, JSF
+			Perfiles, incluyendo el Web (Sept 2009, 28 specs)
+				Java EE 6, Pruning Embeddable, container, JAX-RS, Bean Validation, Web Profile
+			
+		JAVA EE7
+			Mejoras:
+				Concurrency 1.0
+				Web Socket 1.0
+				JSON-p 1.0
+				Batch 1.0
+				
+		Arquitectura Multicapas en java EE
+			
+			Capa presentacion
+				JSF, JSP, Servlets
+			
+			Capa de negocio
+				EJB
+					
+			Capa de datos
+				JDBC/JPA
+				
+		Que es un enterprise JavaBean EJB's
+		
+			*Un enterprise JavaBean es una clase Java con caracteristicas que lo hacen mucho mas potente y robusto:
+				*Los metodos de un EJB son transaccionales
+				*Los metodos pueden ser remotos
+				*Facilidad de comunicacion con las bases de datos
+				*Los metodos pueden ser seguros
+				
+			Caracteristicas de un EJB
+				
+				Cuando un EJB se ejecuta en un Contenedor Java EE qqque soporta EJB's, el contenedor agrega los siguientes servicios disponibles:
+				
+				Servidor de aplicaciones Java
+				
+					OPEN Project Glassfish, Jboos by red hat, WebSphere, Oracle Weblogic, tomcat 
+					
+					*Servicios agregados de manera automatica:
+						Seguridad, Llamadas Asincronas, llamadas remotas, web Services, Transacciones, Inyeccion dependenciasCDI, Pool de conexiones, thread-Safety
+						scheduling, Mensajeria, Interceptores	
+					
+					*Clostering, balance de cargas, tolerancia a fallos.
+					
+					
+				Configuracion de un Enterprise JavaBean (EJB):
+				
+					Tipos de EJB:
+						Stateless: No guardan estado y se utiliza la anotacion @Stateless
+						Stateful: Guardan estados y se utiliza la anotacion @Stateful
+						Singleton: Solo existe una instancia en memorai y se utiliza la anotacion @Singleton
+				
+				Formas de comunicarnos con un EJB
+				
+					Existen diferentes formas de comunicarnos con un EJB:
+					
+						Cliente -> remote -> Servidor de Aplicaciones(Codigo java EJBs)
+					
+						Cliente -> no interface -> Servidor de aplicaciones (Codigo java EJBs)
+				
+					Interfaz Local: Se utiliza cuando el cliente se encuentra en el mismo servidor Java.
+					Interfaz Remota: Se utiliza cuando el cliente se encuentra fuera del servidor Java
+					No interface: Es una variante y simplificacion de los EJB locales	 
+				
+				Anatomia de un EJB
+					Puede implementar o no una interface (Local o remota) o no, y puede tener uno o mas metodos de negocio:
+					
+					HolaMundoEJB.java
+						package beans;
+						
+						import javax.ejb.Stateless;
+						
+					@Stateless
+					public class HolaMundoEJB {
+					
+						public int sumar(int a, int b){
+							return a + b;
+						}
+					}
+		Cliente EJB via JDNI(Java Naming and Directory Interface)
+		
+			JDNI Es un API que permite encontrar servicios o recursos empresariales en un servidor de aplicaciones Java.
+			
+			Para encontrar un EJB a partir de la version 3.1 podemos utilizar la siguiente sintaxis:
+			
+			java:global[/<app-name>]/<module-name>/<bean-name>[!<fully-qualified-interface-name>]
+			ej.
+		
+		Inyeccion de dependencias:
+			
+			Existen 2 tipos de inyeccion de dependencias en EJB:
+			
+				A. Utilizando la anotacion @EJB
+				B. Utilizando la anotacion @Inject
+				
+		Java Web Profile
+		
+		Full profile
+			Web Profile
+				Servlet 3.x 	| JSP
+				JSF 2.x 	| CDI
+				EJB 3.x 	| JTA
+				JPA 2.x 	| Bean Validation		
+			
+			JAX-WS | JAX-RS | JASPIC   | JSR 88
+			JAX-RPC| JAXB   | JACC     | JSR 77
+			JAXR   | JMS    | JCA      | RMI
+			SAAJ   | JAAS   | JavaMail | JDOSLETRASI
+				 
+		Comparacion entre EJB Y EJB LITE
+			
+				API Soportada 			| EJB Lite 	| Full EJB
+				Stateless beans 		| si		| si 
+				Stateful beans 		| si 		| si
+				Singleton beans 		| si 		| si
+				Message driven beans 		| no 		| si
+				No Interfaces 			| si 		| si
+				Local Interfaces 		| si 		| si
+				Remote Interfaces 		| no 		| si
+				Web Service Interfaces 	| no 		| si
+				Asynchronous invocation	| no 		| si
+				Interceptors 			| si 		| si
+				Declarative security 		| si 		| si
+				Declarative transactions 	| si 		| si
+				Programmatic transactions 	| si 		| si
+				Timer Service 			| no 		| si
+				EJB 2.x support 		| no 		| si
+				CORBA Interoperability 	| no 		| si
+				
+		Empaquetamiento de un EJB
+		
+			<<empaquetamiento>>
+			<<artifact>>
+			PersonaServlet.war
+			PersonaServlet.class
+			WEB-INF/web.xml
+			
+			<<artifact>>
+			PersonaEJB.jar
+			PersonaEJB.class
+			META-INF/ejb-jar.xml
+			
+			<<artifact>>
+			PersonaEntity.jar
+			Persona.class
+			META-INF/persistence.xml
+			
+			<<empaquetamiento>>
+			PersonaApplication.war
+			
+			WEB-INF/classes/PersonaEJB.class
+			WEB-INF/classes/Persona.class
+			WEB-INF/classes/PersonaServlet.class
+			WEB-INF/ejb-jar.xml
+			WEB-INF/persistance.xml
+			WEB-INF/web.xml
+			
+			Dato: 
+				REmotas, jns, asincronas, webservices van en JAR Y NO WAR.
+				
+				Archivo .ear (Enterprise Archive File)
+					Es utilizado para empaquetar 1 o mas modulos jar o war en un archivo unico, conocido por el servidor de aplicaciones.
+					
+		Contenedor embebido de java EE
+		
+			Un contenedor embebido tiene como finalidad proveer un ambiente de ejecucion Java EE.
+			
+				EJB Embedded Container 
+					Transaction Manager, Security System, Messagin Engine
+				Java SE
+		
+		GlassFish
+			broxi
+			warpten
+			Domain: domain1 
+			
+	JAVA PERSISTANCE API (JPA)
+	
+		¿Que es?
+			Es el estandar de persistencia de Java. JPA implementa conceptos de frameworks ORM(Object Relational Mapping)
+			
+			Base De Datos				codigo java
+				OneToMany
+			(Persona |--- Usuario)  <- mapeo -> 
+						 	<- generar > Persona - Usuario
+			leccion 304, min 1:05 esta mejor el g rafico se entiende mas
+			
+		Dato: 
+			La idea es trabajar con objetos java, y no con codigo sql.
+		
+		Caracteristicas:
+		
+			PERSISTENCIA UTILIZANDO POJOs: JavaBean.
+				
+				Es es el aspecto mas importante, porque cualquier clase de java puede convertirse en una clase de entidad agregando una notation y/o un archivo xml de mapeo.
+			
+			No Intrusivo.
+				Es una capa separada a los objetos a persistir, no requiere extender ninguna funcionalidad en particular
+				
+			Consultas utilizando Objetos Java
+				Permite ejecutar querys expresados en terminos de objetos javas y sus relaciones sin necesidad de utilizar lenguaje sql.
+				
+			Configuracion simple.
+				Muchas de las config son por default.
+			
+			Integracion
+				Las arquitecturas Java EE son 
+				s, una integracion transparente es muy valiosa.
+					
+			Testing
+				Es posible realizar pruebas unitarias o utilizar clases main fuera del servidor, simplemente utilizando la version estandar de java.
+				
+		Arquitectura empresarial con JPA
+			Una clase de entidad es un POJO(Plain Old Java Object) y puede configurarse por medio de anotaciones o un archivo XML(Extensible Markup Language->definicion).
+			
+			Ejemplo de clase de Entidad con anotaciones:
+			
+				@Entity
+				public class Persona {
+				
+					@Id <- Indica que es llave primaria
+					@GenerateValue <- La forma en la que se genera el valor
+					private Long personaId;
+					
+					@Column(nullable = false) <- no puede ser nulo en la bd
+					private String nombre;
+					
+					private String apePaterno;
+					
+					private String apeMaterno
+					private String email;
+					private Integer telefono;
+				
+					//Constructores, getters, setters
+				}
+			
+		API DE JPA Y ENTITY MANAGER
+	
+		Ejemplo de contenido del archivo persistence.xml
+		
+			<persistence>
+				<persistence-unit name="PersonaService" transaction-type="RESOURCE_LOCAL">
+				//persistence-unit Indica el nombre de la unidad de persistencia, ej PeronaService.
+				//transaction-type especifica el tipo de transaccionabilidad que se utilizara
+					<class>domain.Persona</class>
+					//class es la clase de entidad que se va a utilizar
+					<properties>
+						//properties especifica caracteristicas del proveedor a utilizar asi como los datos de conexion a la bd si es un recurso local.
+						<property 	name="javax.persistence.jdbc.driver"
+							  	value'='"org.apache.derby.jdbc.ClientDriver"/>
+						<property 	name="javax.persistence.jdbc.url"
+							  	value'='"jdbc:derby//localhost:1527/PersonaServDB;create=true"/>	
+						<property  	name="javax.persistence.jdbc.password" value="APP" />
+					</properties>
+			 	</persistence-unit>
+			</persistence>
+			
+			Al momento de empaquetar una app java el archivo persistance.xml se debe ubicar en la carpeta META-INF/persistance.xml del archivo jar. dentro de una carpeta META INF
+			
+			Utilizando la unidad de persistencia
+			
+				EJ.
+				
+			@Stateless
+			public class PersonaServiceBean implements PersonaServi
+			ce {
+			
+				@PersistenceContext(unitName="PersonaService")
+				EntityManager em;
+				
+				public void agregarPersona(Persona persona){
+					em.persist(persona);
+				}
+				
+				public Persona encontrarPersona(int idPersona){
+				
+					return em.find(Persona.class, idPersona)
+				}
+				
+				public Persona modificarNombrePersona(int idPersona, String nuevoNombre){
+					Persona persona = em.find(Persona.class, idPersona);
+					if(persona != null){
+						persona.setNombre(nuevoNombre);
+					}
+					return persona;
+				}
+				public void eliminarPersona(int idPersona){
+					Employee emp = em.find(Employee.class, idPersona);
+					em.remove(emp);
+				}
+			}
+			
+		Ciclo vida JPA ABM
+		(BUSCALO EN QOWNOTES CON ESE TITUILO;))
+		
+				

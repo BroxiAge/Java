@@ -1,0 +1,4 @@
+Desde la posición 0 a CANTIDAD-1
+	Arreglo de enteros desordenado = 2 1 6 5 7 3 2 5
+	Arreglo de enteros ordenado creciente = 1 2 2 3 5 5 6 7
+	Arreglo de enteros ordenado decreciente = 7 6 5 5 3 2 2 1

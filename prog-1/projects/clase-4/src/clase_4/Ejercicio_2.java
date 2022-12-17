@@ -1,0 +1,52 @@
+package clase_4;
+
+/* Escribir un programa que permita el ingreso de dos números enteros
+por teclado y realice:
+
+_ imprima A si el primero mayor al segundo,
+_ o imprima B si ambos son múltiplos de 2,
+_ o imprima C para ninguna de las opciones anteriores
+*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Ejercicio_2 {
+
+	public static void main(String[] args) {
+		
+		int val1 = -77;
+		int val2 = -77;
+		
+		try {
+
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			
+			System.out.println ("Ingrese su primer valor: ");
+			val1 = Integer.valueOf(entrada.readLine());
+			
+			System.out.println ("Ingrese su primer valor: ");
+			val2 = Integer.valueOf(entrada.readLine());
+			
+			if (val1 > val2) {
+				System.out.println("A");
+			}
+			else if ((val1 % 2 == 0) && (val2 % 2 == 0) ){
+				System.out.println("B");
+			}
+			else {
+				System.out.println("C");
+			}
+			
+			
+		}
+			catch (Exception exc) {
+
+			//imprimo por consola un mensaje con el valor de la variable exc (tipo de error)
+			System.out.println(exc);
+
+			}
+
+	}
+
+}

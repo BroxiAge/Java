@@ -1,0 +1,18 @@
+//Obtener INICIO secuencia
+
+public static int obtener_inicio_secuencia(int[] arr, int inicio){
+		while ((inicio < MAX)&&(arr[inicio]==0)){
+			inicio++;
+		}
+		return inicio;
+		
+	}
+
+//Obtener FIN secuencia
+
+public static int obtener_fin_secuencia(int[] arr, int inicio){
+		while ((inicio < MAX)&&(arr[inicio]!=0)){
+			inicio++;	
+		}
+		return inicio-1;
+	}

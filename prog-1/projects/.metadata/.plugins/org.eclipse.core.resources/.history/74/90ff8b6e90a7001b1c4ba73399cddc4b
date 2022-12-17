@@ -1,0 +1,39 @@
+package clase_4;
+
+/*Escribir un programa que permita el ingreso de un carácter y realice:
+_ imprima es carácter dígito si el carácter ingresado es carácter
+dígito,
+_ o imprima no es carácter dígito*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Ejercicio_1 {
+
+	public static void main(String[] args) {
+		
+		char caracter;
+		try {
+
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println ("Ingrese su valor caracter: ");
+			caracter = entrada.readLine().charAt(0);
+			
+			
+			
+			
+			System.out.println("Su caracter es: " + caracter);
+			
+			
+
+			}
+			catch (Exception exc) {
+
+			//imprimo por consola un mensaje con el valor de la variable exc (tipo de error)
+			System.out.println(exc);
+
+			}
+
+	}
+
+}

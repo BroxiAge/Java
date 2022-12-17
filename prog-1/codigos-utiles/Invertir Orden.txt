@@ -1,0 +1,22 @@
+INVERTIR EL ORDEN (el iterador del for es Max/2, porque al llegar a la mitad estaría todo invertido)
+
+[1 , 2 , 3 , 4 , 5 , 6] ORIGINAL
+
+A = arr[1]
+[(1) , 2 , 3 , 4 , 5 , 6]
+
+arr[1] = arr[6]
+[6 , 2 , 3 , 4 , 5 , (6)]
+
+arr[6] = Prim
+[6 , 2 , 3 , 4 , 5 , (1)]
+
+public static void invertir_arreglo(int [] arrint){
+	int lastPos = MAX-1;
+	int firstPos;
+	for(int i=0 ; i<MAX/2 ; i++){
+		firstPos = arrint[i]; 
+		arrint[i] = arrint[lastPos-i]; 
+		arrint[lastPos-i] = firstPos;
+	}
+}

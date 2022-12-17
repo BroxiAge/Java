@@ -1,0 +1,111 @@
+package Parcial_1;
+		//val_indice_sec_ant_central;//ES EL NOMBRE DE LA FUNCION QUE ME OTORGAN
+		// obtener_indice_sec_max_impar(arrB); //ES EL NOMBRE DE LA FUNCION QUE ME OTORGAN
+	public class Parcial {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final int MAXVALOR = 9;
+	public static final int MINVALOR = 1;
+	public static void main(String[] args) {
+		obtener_indice_sec_max_impar(arrB);
+		val_indice_sec_ant_central(arrA);
+		int [][] matint;
+		matA = new int[MAXFILA][MAXCOLUMNA];
+		int [][] matint;
+		matB = new int[MAXFILA][MAXCOLUMNA];
+		
+		intercambiar_Mat(matA, matB);
+		
+	}
+	
+	public static void intercambiar_Mat(int[][] matA, int [][] matB){
+		
+		for (int fila = 0; fila < MAXFILA; fila++) { //Le paso ambos "arreglos"
+			buscar_sec_prev_central(matA[fila], matB[fila]);
+		}
+	}
+	
+	public static void buscar_sec_prev_central(int[] arrA, int[] arrB){
+		int inicio_A, fin_A; // es el inicio y el fin de la secuencia ANTERIOR a la central.
+		int inicio_sec_impar_B, fin_sec_impar_B;
+		inicio_A = val_indice_sec_ant_central;//uso la funcion que me otorgan.
+		fin_A = obtener_fin_secuencia(arrA, inicio_A);
+		inicio_sec_impar_B = obtener_indice_sec_max_impar(arrB); //uso la 2da funcion que me otorgan.
+		fin_sec_impar_B = obtener_fin_secuencia(arrB, inicio_sec_impar_B);
+		intercambiar_filas(arrA, arrB, inicio_A, fin_A, inicio_sec_impar_B,fin_sec_impar_B);
+		}
+	
+	public static void intercambiar_filas(int[] arrA, int[] arrB, int inicio_A, int fin_A, int inicio_sec_impar_B, int fin_sec_impar_B){
+		int cant_valores_100_A, cant_valores_100_B, check;// este check deberia ser boolean pero  sin probar no recuerdo realmente como es!
+		int sum, firstPos;
+		int tamanio_sec_A, tamanio_sec_B;
+		check = 0; //0 significa que tamaño sec A es igual a tamaño sec B.else 1 lo uso en la linea 50.
+		tamanio_sec_A = obtener_tamanio_secuencia(arrA,inicio_A, fin_A ); //ya se cuantos lugares debo utiliar en la matA arreglos en realidad.
+		tamanio_sec_B = obtener_tamanio_secuencia(arrB,inicio_sec_impar_B, fin_sec_impar_B ); //ya se cuantos lugares debo utiliar en la matBarreglos en realidad.
+		
+		if (tamanio_sec_B > tamanio_sec_A){
+			sum = (tamanio_sec_B-tamanio_sec_A); // OBTENGO LOS LUGARES QUE NECESITO HACER CORRIENDO HACIA LA DERECHA EN EL CASO Q LA SEC DE B SEA MAYOR QUE LA DE A. SE PIERDEN ULTIMOS VALORES.
+			for (int lugares_faltantes = 0; lugares_faltantes < sum; lugares_faltantes++) {
+				corrimiento_der(arrA, fin_A+1+lugares_faltantes); //hice espacio
+			}
+			check = 1; //0 significa que tamaño sec A es igual a tamaño sec B.else 1
+		}
+		
+		for(int i=0 ; i< tamanio_sec_B-1 ; i++){
+			arrA[inicio_A+i] = arrB[inicio_sec_impar_B]; 
+			}
+		
+		cant_valores_100_A = obtener_cant_mayor_100(arrA, inicio_A, fin_A);
+		cant_valores_100_B = obtener_cant_mayor_100(arrB, inicio_sec_impar_B, fin_sec_impar_B);
+		//VARIABLE check (deberia ser boolean). 0 significa que tamaño sec A es igual a tamaño sec B.else 1
+		if ((cant_valores_100_A < cant_valores_100_B) && (check == 1)){  //checkeo que se haya hecho"espacio" por la diferencia de tamaños de las secuencias.
+			/*Entiendo que si pasa esto, y la secuencia que reemplaze en A por la de B tienen el mismo tamanio, no debería hacer nada porque se respetaria el espacio*/
+			/*Esto sería para contemplar el caso, de que SEC B sea > que SEC A, y queden pegadas. Entonces este if sería para ese caso */
+			corrimiento_izq(arrA, fin_sec_impar_B+1);// le doy el siguiente del final de la sec mas larga para poder insertar un 0 alli.
+			arrA[fin_sec_impar_B+1] = 0; //inserto el "0" divisor luego de hacer espacio. el enunciado no dice nada sobre mantener la integridad de la sec central. asi que ignoro el hecho de que pued oestar borrando algo de la siguiente sec. no me da el tiempo para hacer todos los corrimientos neceasrioss!!
+		}
+	}
+	
+	public static int obtener_cant_mayor_100(int[] arr, int inicio, int fin){
+		int cant_mayor_100 = 0;
+		
+		while (inicio <= fin){
+			if ( arr[inicio] > 100)
+			cant_mayor_100++;
+		}
+		return cant_mayor_100;
+	}
+	
+	public static void corrimiento_der(int [] arrint, int indice){
+		
+		while (indice > MINVALOR-1){
+			arrint[indice] = arrint[indice-1];
+			indice--;
+		}
+	}
+	
+	public static void corrimiento_izq(int [] arrint, int indice){
+		
+		while (indice < MAXCOLUMNA-1){
+			arrint[indice] = arrint[indice+1];
+			indice++;
+		}
+	}
+	
+	public static int obtener_tamanio_secuencia(int[] arr, int inicio, int fin){
+		int tamanio = 0;
+		while (inicio <= fin){
+			tamanio++;
+			inicio++;
+		}
+		return tamanio;
+		}
+	
+	public static int obtener_fin_secuencia(int[] arr, int inicio){
+		while ((inicio < MAXCOLUMNA)&&(arr[inicio]!=0)){
+			inicio++;	
+		}
+		return inicio-1;//me da la pos exacta
+	}
+	
+}

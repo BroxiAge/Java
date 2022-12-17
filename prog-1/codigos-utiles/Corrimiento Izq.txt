@@ -1,0 +1,46 @@
+Corrimiento Izq: Se pierde el primer valor, para arreglos crecientes.
+ELIMINAR
+
+	[ 1. | 2 | 3 | 4 | 5 | 6 | 7 ] -> [ 2 | 3 | 4 | 5 | 6 | 7 | 7]
+	[ 2 | 2. | 3 | 4 | 5 | 6 | 7 ]
+	[ 2 | 3  | 3.| 4 | 5 | 6 | 7 ]
+	[ 2 | 3  | 4 | 4.| 5 | 6 | 7 ]
+	[ 2 | 3  | 4 | 5 | 5.| 6 | 7 ]
+	[ 2 | 3  | 4 | 5 | 6 | 6.| 7 ]
+	[ 2 | 3  | 4 | 5 | 6 | 7 | 7.]
+	
+
+	public static void corrimiento_izq(int [] arrint, int indice){
+		
+		while (indice < MAX-1){
+			arrint[indice] = arrint[indice+1];
+			indice++;
+		}
+	}
+
+	public static void corrimiento_izq(int[] arrint, int posicion) {       
+        	for(int pos = posicion; pos < MAX-1; pos++){
+            	arrint[pos] = arrint[pos+1];
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

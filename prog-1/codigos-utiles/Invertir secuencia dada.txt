@@ -1,0 +1,51 @@
+public static void invertir_secuencia_por_tamanio(int[] arr, int tamanio){
+		int inicio,fin,tamanio_secuencia;
+		inicio = 0;
+		fin = -1;
+		if ((inicio < MAX)){
+			inicio = obtener_inicio_secuencia(arr,fin+1); //REUTILIZAMOS
+				if (inicio < MAX){
+					fin = obtener_fin_secuencia(arr,inicio); //REUTILIZAMOS
+					tamanio_secuencia = obtener_tamanio_secuencia(arr,inicio,fin);
+					System.out.println("El tamanio de la secuencia de "+inicio+" a "+fin+" es "+tamanio_secuencia);
+					if (tamanio_secuencia == tamanio){
+						invertir_secuencia_dada(arr, inicio, fin, tamanio_secuencia);
+					}
+				}
+		}
+	}
+	
+	public static void invertir_secuencia_dada(int[] arrint,int inicio,int fin, int tamanio_secuencia){
+			
+			int firstPos;
+			for(int i=0 ; i< tamanio_secuencia-1 ; i++){
+				System.out.println("El inicio de la secuencia "+ inicio);
+				System.out.println("El fin de la secuencia "+ fin);
+				firstPos = arrint[inicio+i]; 
+				arrint[inicio+i] = arrint[fin-i]; 
+				arrint[fin-i] = firstPos;
+			}
+	}
+	
+	public static int obtener_tamanio_secuencia(int[] arr, int inicio, int fin){
+		int tamanio = 0;
+		while (inicio <= fin){
+			tamanio++;
+			inicio++;
+		}
+		return tamanio;
+		}
+	
+	public static int obtener_inicio_secuencia(int[] arr, int inicio){
+		while ((inicio < MAX)&&(arr[inicio]==0)){
+			inicio++;
+		}
+		return inicio;
+	}
+	
+	public static int obtener_fin_secuencia(int[] arr, int inicio){
+		while ((inicio < MAX)&&(arr[inicio]!=0)){
+			inicio++;	
+		}
+		return inicio-1;
+	}
