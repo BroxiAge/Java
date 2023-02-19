@@ -1,10 +1,10 @@
 package practico_7;
 /*
- * Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+ * Hacer un programa que dado un arreglo de enteros de tamaï¿½o 10 que se encuentra
 precargado, solicite al usuario un numero entero y elimine la primer ocurrencia de numero (un
-número igual) en el arreglo si existe. Para ello tendrá que buscar la posición y si está, realizar un
-corrimiento a izquierda (queda una copia de la última posición del arreglo en la anteúltima
-posición).
+nï¿½mero igual) en el arreglo si existe. Para ello tendrï¿½ que buscar la posiciï¿½n y si estï¿½, realizar un
+corrimiento a izquierda (queda una copia de la ï¿½ltima posiciï¿½n del arreglo en la anteï¿½ltima
+posiciï¿½n).
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

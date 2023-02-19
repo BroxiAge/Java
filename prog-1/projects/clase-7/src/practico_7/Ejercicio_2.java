@@ -1,8 +1,8 @@
 package practico_7;
-/*Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
-precargado, invierta el orden del contenido (por ejemplo: el que está en 0 se intercambia con
-el que está en 9, el que está en 1 con el que está en 8...). Este intercambio no se debe realizar
-de manera explícita, hay que hacer un método que incluya una iteración de intercambio.*/
+/*Hacer un programa que dado un arreglo de enteros de tamaï¿½o 10 que se encuentra
+precargado, invierta el orden del contenido (por ejemplo: el que estï¿½ en 0 se intercambia con
+el que estï¿½ en 9, el que estï¿½ en 1 con el que estï¿½ en 8...). Este intercambio no se debe realizar
+de manera explï¿½cita, hay que hacer un mï¿½todo que incluya una iteraciï¿½n de intercambio.*/
 import java.util.Random;
 
 public class Ejercicio_2 {	
@@ -17,7 +17,7 @@ public class Ejercicio_2 {
 		imprimir_arreglo_int(arrint);
 		
 		cantPares = obtener_cantidad_pares_arreglo(arrint);
-		System.out.println("Cantidad de números pares:  " + cantPares);
+		System.out.println("Cantidad de nï¿½meros pares:  " + cantPares);
 	}
 	
 	//carga de arreglo de int con valores de MINVALOR a MAXVALOR
@@ -50,8 +50,8 @@ public class Ejercicio_2 {
 		int firstPos;
 		for(int i=0 ; i<MAX/2 ; i++){
 			firstPos = arrint[i]; //Tomas primer valor de la iteracion para poner al final.
-			arrint[i] = arrint[lastPos-i]; //Reemplazas el primer valor, con el último de la iteracion actual.
-			arrint[lastPos-i] = firstPos;  //Reemplaas el último valor, con el primero de la iteracion actual.
+			arrint[i] = arrint[lastPos-i]; //Reemplazas el primer valor, con el ï¿½ltimo de la iteracion actual.
+			arrint[lastPos-i] = firstPos;  //Reemplaas el ï¿½ltimo valor, con el primero de la iteracion actual.
 		}
 	}
 	

@@ -1,10 +1,12 @@
 package practico_7;
 /*
  * Hacer un programa que dado el arreglo definido y precargado permita
-encontrar la posición de inicio y fin de la secuencia cuya suma de valores sea
+encontrar la posiciï¿½n de inicio y fin de la secuencia cuya suma de valores sea
 mayor.
  */
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Random;
 public class Ejercicio_11 {
 public static final int MAX = 40;
@@ -17,14 +19,11 @@ public static final double probabilidad_numero = 0.4;
 			
 			int [] arrint;
 			arrint = new int[MAX];
-			
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			try{
-				
 				cargar_arreglo_aleatorio_secuencias_int(arrint);
 				imprimir_arreglo_secuencias_int(arrint);
 				
-				
-				imprimir_arreglo_secuencias_int(arrint); //REUTILIZAMOS
 				imprimir_suma_cada_secuencia(arrint);
 			}
 			catch(Exception exc){
@@ -98,5 +97,16 @@ public static final double probabilidad_numero = 0.4;
 			inicio++;
 		}
 		return suma;
+	}
+	
+	public static int obtener_tamanio_secuencia(int[] arr, int inicio, int fin) {
+		
+		int tamanioSecuencia = 0;
+		
+		for (int i = inicio -1 ; i < fin; i++) {
+			tamanioSecuencia ++;
+		}
+			System.out.println("La secuencia inicio: " + inicio + " fin: " + fin +   " el tamanio de la secuencia es: " + tamanioSecuencia);
+			return tamanioSecuencia;
 	}
 }

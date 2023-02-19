@@ -9,8 +9,6 @@ public class Ejercicio_1 {
 		String nombre = "Nahuel";
 		//boolean boleano;
 		
-		
-		
 		edad = 28;
 		altura = 1.69;
 		inicialApellido = 'D';

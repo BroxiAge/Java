@@ -22,6 +22,7 @@ public class Ejercicio_4 {
 			imprimir_arreglo_int(arrint);
 			System.out.println("asd");
 			corrimiento_der(arrint, valInsert);
+			arrint[0] = valInsert;
 			imprimir_arreglo_int(arrint);
 			
 		}
@@ -52,7 +53,5 @@ public class Ejercicio_4 {
 			arrint[indice] = arrint[indice-1];
 			indice--;
 		}
-		
-		arrint[0] = valInsert;
 	}
 }

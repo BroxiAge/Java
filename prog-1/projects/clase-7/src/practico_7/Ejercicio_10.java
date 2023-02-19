@@ -1,8 +1,8 @@
 package practico_7;
 /*
  * Hacer un programa que dado el arreglo definido y precargado permita
-obtener a través de métodos la posición de inicio y la posición de fin de la
-secuencia ubicada a partir de una posición entera ingresada por el
+obtener a travï¿½s de mï¿½todos la posiciï¿½n de inicio y la posiciï¿½n de fin de la
+secuencia ubicada a partir de una posiciï¿½n entera ingresada por el
 usuario. Finalmente, si existen imprima por pantalla ambas posiciones
 obtenidas.
  */
@@ -11,7 +11,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
 public class Ejercicio_10 {
-public static final int MAX = 40;
+public static final int MAX = 20;
 public static final int MAXVALOR = 9;
 public static final int MINVALOR = 1;
 public static final double probabilidad_letra = 0.4;
@@ -25,12 +25,12 @@ public static final double probabilidad_numero = 0.4;
 			arrint = new int[MAX];
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 			try{
+				cargar_arreglo_int_arbitrario(arrint);
 				
-			
 				System.out.println("Ingrese la primera pos del array");
 				inicio = Integer.valueOf(entrada.readLine());
-				cargar_arreglo_aleatorio_secuencias_int(arrint);
-				imprimir_arreglo_secuencias_int(arrint);
+				imprimir_arreglo_secuencias_int(arrint);				
+				
 				inicio = obtener_inicio_secuencia(arrint, inicio);
 				fin = obtener_fin_secuencia(arrint, inicio);
 				System.out.println("el inicio de la secuencia es la pos:" + inicio);
@@ -76,5 +76,29 @@ public static final double probabilidad_numero = 0.4;
 			inicio++;	
 		}
 		return inicio-1;
+	}
+	
+	public static void cargar_arreglo_int_arbitrario(int[] arr) {
+
+		arr[0] = 0;
+		arr[1] = 3;
+		arr[2] = 2;
+		arr[3] = 1;
+		arr[4] = 0;
+		arr[5] = 4;
+		arr[6] = 7;
+		arr[7] = 2;
+		arr[8] = 0;
+		arr[9] = 9;
+		arr[10] = 0;
+		arr[11] = 3;
+		arr[12] = 6;
+		arr[13] = 3;
+		arr[14] = 0;
+		arr[15] = 4;
+		arr[16] = 7;
+		arr[17] = 2;
+		arr[18] = 0;
+		arr[19] = 0;
 	}
 }
