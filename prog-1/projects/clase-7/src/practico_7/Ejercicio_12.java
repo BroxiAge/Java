@@ -1,74 +1,84 @@
 package practico_7;
 /* Hacer un programa que dado el arreglo definido y precargado permita encontrar la
 posición de inicio de la anteúltima secuencia (considerar comenzar a buscarla a
-partir de la ultima posición del arreglo). */ 
+partir de la ultima posición del arreglo). */
 
 public class Ejercicio_12 {
-	
+
 	public static final int MAX = 10;
 	public static final int MIN = 1;
 
 	public static void main(String[] args) {
-		
-		int [] arrint;
+
+		int[] arrint;
 		arrint = new int[MAX];
-		
-		
+
 		try {
 			cargar_arreglo_int_arbitrario(arrint);
 			imprimir_arreglo_secuencias_int(arrint);
-			
-			indice_inicial_sec(arrint, 9);
-			
+			encontrar_anteultima_secuencia_fila(arrint);
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
-		} 
+		}
 	}
-	
+
 	public static void cargar_arreglo_int_arbitrario(int[] arr) {
 
 		arr[0] = 0;
-		arr[1] = 1;
+		arr[1] = 3;
 		arr[2] = 2;
-		arr[3] = 7;
-		arr[4] = 0;
-		arr[5] = 6; // 5
-		arr[6] = 5; // 6 
-		arr[7] = 0;
-		arr[8] = 8;
+		arr[3] = 0;
+		arr[4] = 4;
+		arr[5] = 5; // 5
+		arr[6] = 0; // 6
+		arr[7] = 9;
+		arr[8] = 1;
 		arr[9] = 0;
 	}
-	
-	public static void imprimir_arreglo_secuencias_int(int [] arr){
+
+	public static void imprimir_arreglo_secuencias_int(int[] arr) {
 		System.out.print("Arreglo de secuencias int\n|");
-		for (int pos = 0; pos < MAX; pos++){
-			System.out.print(arr[pos]+"|");
+		for (int pos = 0; pos < MAX; pos++) {
+			System.out.print(arr[pos] + "|");
 		}
-		
+
 		System.out.print("\n");
-		}
-	
-	public static int obtener_inicio_secuencia(int[] arr, int inicio){
-		while ((MIN < inicio)&&(arr[inicio]==0)){
-			inicio--;
-		}
-		return inicio;
+	}
+
+	public static void encontrar_anteultima_secuencia_fila(int[] arrint) {
+		int inicio, fin;
+		int inicio2, fin2;
+
+		fin = encontrar_fin_inverso(arrint, MAX - 1);
+		 System.out.println(fin);
+		inicio = encontrar_inicio_inverso(arrint, fin);
+		 System.out.println(inicio+1);
+
+		fin2 = encontrar_fin_inverso(arrint, inicio);
+		System.out.println("Este es el fin: " + fin2);
 		
+		inicio2 = encontrar_inicio_inverso(arrint, fin2);
+		System.out.println("Este es el inicio: " + (inicio2 + 1));
+
 	}
-	
-	public static int obtener_fin_secuencia(int[] arr, int inicio){
-		while ((MIN < inicio)&&(arr[inicio]!=0)){
-			inicio--;	
+
+	public static int encontrar_fin_inverso(int[] arrint, int fin) {
+
+		while ((arrint[fin] == 0) && (fin > 0)) {
+			fin--;
 		}
-		return inicio-1;
+		return fin;
 	}
-	
-	public static int indice_inicial_sec(int[] arr, int pos){
-    	while ((pos>0)&&(arr[pos]!=0)){
-    		pos--;
-    	}
-    	System.out.println(pos);
-    	return pos+1;
-    }
+
+	public static int encontrar_inicio_inverso(int[] arrint, int fin) {
+
+		while ((arrint[fin] != 0) && (fin > 0)) {
+			fin--;
+		}
+
+		return fin;
+	}
+
 }

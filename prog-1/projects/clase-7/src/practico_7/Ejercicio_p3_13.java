@@ -1,8 +1,8 @@
 package practico_7;
 /*
- * Hacer un programa que dado el arreglo definido y precargado, y un número
-entero ingresado por el usuario, elimine las secuencias de tamaño igual al
-número ingresado.
+ * Hacer un programa que dado el arreglo definido y precargado, y un nï¿½mero
+entero ingresado por el usuario, elimine las secuencias de tamaï¿½o igual al
+nï¿½mero ingresado.
  */
 
 import java.io.BufferedReader;

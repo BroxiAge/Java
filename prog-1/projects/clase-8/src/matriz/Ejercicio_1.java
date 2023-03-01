@@ -1,8 +1,8 @@
 package matriz;
 /*
- * Hacer un programa que dado una matriz de enteros de tamaño 5*10 que se encuentra
+ * Hacer un programa que dado una matriz de enteros de tamaï¿½o 5*10 que se encuentra
 precargada, invierta el orden del contenido por fila. Este intercambio no se debe realizar
-de manera explícita, hay que hacer un método que incluya una iteración de intercambio.
+de manera explï¿½cita, hay que hacer un mï¿½todo que incluya una iteraciï¿½n de intercambio.
  */
 import java.util.Random;
 
