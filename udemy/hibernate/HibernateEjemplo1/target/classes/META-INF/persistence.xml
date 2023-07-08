@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+    http://xmlns.jcp.org/xml/ns/persistence_2_2.xsd">
+
+	<persistence-unit name="HibernateEjemplo1"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>mx.com.gm.domain.Persona</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://735c075ef204.sn.mynetname.net:6432/Tudai22?useSSL=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.user"
+				value="unc_37385519" />
+			<property name="javax.persistence.jdbc.password"
+				value="37385519" />
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQL95Dialect" />
+		</properties>
+
+	</persistence-unit>
+</persistence> 
