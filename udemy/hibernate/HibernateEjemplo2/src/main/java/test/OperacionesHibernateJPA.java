@@ -36,14 +36,14 @@ public class OperacionesHibernateJPA {
 		//persona.setIdPersona(0); 
 		//personaDAO.eliminar(persona);
 		
-		//Alumno alumno = new Alumno();
-		//AlumnoDAO alumnoDAO = new AlumnoDAO();
+//		Alumno alumno = new Alumno();
+//		AlumnoDAO alumnoDAO = new AlumnoDAO();
+//		
+//		alumnoDAO.listar();
 		
-		//alumnoDAO.listar();
-		
-		//Asignacion asignacion = new Asignacion();
-		//AsignacionDAO asignacionDAO = new AsignacionDAO();
-		//asignacionDAO.listar();
+		Asignacion asignacion = new Asignacion();
+		AsignacionDAO asignacionDAO = new AsignacionDAO();
+		asignacionDAO.listar();
 		
 		//Curso curso = new Curso();
 		//CursoDAO cursoDAO = new CursoDAO();
