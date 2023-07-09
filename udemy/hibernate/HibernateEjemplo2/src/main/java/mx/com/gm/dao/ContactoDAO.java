@@ -7,29 +7,28 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import mx.com.gm.domain.Asignacion;
+import mx.com.gm.domain.Contacto;
 
-public class AsignacionDAO {
-
+public class ContactoDAO {
 	private EntityManagerFactory emf;
 	private EntityManager em;
-	
-	public AsignacionDAO() {
+
+	public ContactoDAO() {
 		emf = Persistence.createEntityManagerFactory("HibernatePU");
 		em = emf.createEntityManager();
 	}
-	
+
 	public void listar() {
-		String hql = "SELECT a FROM Asignacion a";
+		String hql = "SELECT p FROM Contacto p";
 		Query query = em.createQuery(hql);
-		
-		List<Asignacion> asignacions = query.getResultList();
-		for (Asignacion p : asignacions) {
-			System.out.println("asignacion = " + p);
+
+		List<Contacto> contactos = query.getResultList();
+		for (Contacto p : contactos) {
+			System.out.println("contacto = " + p);
 		}
 	}
 
-	public void insertar(Asignacion persona) {
+	public void insertar(Contacto persona) {
 		// Al no tener un servidor Tipo tomcat, somos responsables de abrir y cerrar la
 		// transacción.
 
@@ -47,7 +46,7 @@ public class AsignacionDAO {
 		}
 	}
 
-	public void modificar(Asignacion persona) {
+	public void modificar(Contacto persona) {
 
 		try {
 			em.getTransaction().begin();
@@ -65,7 +64,7 @@ public class AsignacionDAO {
 		}
 	}
 
-	public void eliminar(Asignacion persona) {
+	public void eliminar(Contacto persona) {
 
 		try {
 			em.getTransaction().begin();

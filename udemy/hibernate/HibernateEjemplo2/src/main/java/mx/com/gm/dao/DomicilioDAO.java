@@ -7,29 +7,29 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import mx.com.gm.domain.Asignacion;
+import mx.com.gm.domain.Domicilio;
 
-public class AsignacionDAO {
-
+public class DomicilioDAO {
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	
-	public AsignacionDAO() {
+	public DomicilioDAO() {
+
 		emf = Persistence.createEntityManagerFactory("HibernatePU");
 		em = emf.createEntityManager();
 	}
 	
 	public void listar() {
-		String hql = "SELECT a FROM Asignacion a";
+		String hql = "SELECT p FROM Domicilio p";
 		Query query = em.createQuery(hql);
 		
-		List<Asignacion> asignacions = query.getResultList();
-		for (Asignacion p : asignacions) {
-			System.out.println("asignacion = " + p);
+		List<Domicilio> domicilios = query.getResultList();
+		for (Domicilio p : domicilios) {
+			System.out.println("domicilio = " + p);
 		}
 	}
 
-	public void insertar(Asignacion persona) {
+	public void insertar(Domicilio persona) {
 		// Al no tener un servidor Tipo tomcat, somos responsables de abrir y cerrar la
 		// transacción.
 
@@ -47,7 +47,7 @@ public class AsignacionDAO {
 		}
 	}
 
-	public void modificar(Asignacion persona) {
+	public void modificar(Domicilio persona) {
 
 		try {
 			em.getTransaction().begin();
@@ -65,7 +65,7 @@ public class AsignacionDAO {
 		}
 	}
 
-	public void eliminar(Asignacion persona) {
+	public void eliminar(Domicilio persona) {
 
 		try {
 			em.getTransaction().begin();
