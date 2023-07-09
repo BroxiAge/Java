@@ -1,2 +1,9 @@
-/home/broxi/eclipse-workspace/hibernate/HibernateEjemplo1/src/main/java/mx/com/gm/domain/Persona.java
-/home/broxi/eclipse-workspace/hibernate/HibernateEjemplo1/src/main/java/test/HolaMundoHibernate.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Contacto.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/test/HolaMundoHibernate.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/dao/PersonaDAO.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Domicilio.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Asignacion.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Curso.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Persona.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/test/OperacionesHibernateJPA.java
+/home/broxi/Facu/java/udemy/hibernate/HibernateEjemplo2/src/main/java/mx/com/gm/domain/Alumno.java

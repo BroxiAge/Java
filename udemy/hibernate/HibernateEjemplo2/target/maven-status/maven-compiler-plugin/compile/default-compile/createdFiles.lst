@@ -1,2 +1,9 @@
+mx/com/gm/domain/Curso.class
+mx/com/gm/domain/Contacto.class
+mx/com/gm/domain/Asignacion.class
+mx/com/gm/dao/PersonaDAO.class
+mx/com/gm/domain/Alumno.class
 mx/com/gm/domain/Persona.class
 test/HolaMundoHibernate.class
+test/OperacionesHibernateJPA.class
+mx/com/gm/domain/Domicilio.class
