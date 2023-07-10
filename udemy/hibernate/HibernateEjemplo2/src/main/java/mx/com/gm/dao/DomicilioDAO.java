@@ -35,7 +35,7 @@ public class DomicilioDAO {
 
 		try {
 			em.getTransaction().begin();
-			em.persist(persona);
+			em.merge(persona);
 			em.getTransaction().commit();
 		} catch (Exception ex) {
 			ex.printStackTrace(System.out);

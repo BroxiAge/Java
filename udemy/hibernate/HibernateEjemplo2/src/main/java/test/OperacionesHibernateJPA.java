@@ -36,14 +36,10 @@ public class OperacionesHibernateJPA {
 		//persona.setIdPersona(0); 
 		//personaDAO.eliminar(persona);
 		
-//		Alumno alumno = new Alumno();
-//		AlumnoDAO alumnoDAO = new AlumnoDAO();
-//		
-//		alumnoDAO.listar();
 		
-		Asignacion asignacion = new Asignacion();
-		AsignacionDAO asignacionDAO = new AsignacionDAO();
-		asignacionDAO.listar();
+		//Asignacion asignacion = new Asignacion();
+		//AsignacionDAO asignacionDAO = new AsignacionDAO();
+		//asignacionDAO.listar();
 		
 		//Curso curso = new Curso();
 		//CursoDAO cursoDAO = new CursoDAO();
@@ -56,6 +52,35 @@ public class OperacionesHibernateJPA {
 		//Contacto contacto = new Contacto();
 		//ContactoDAO contactoDAO = new ContactoDAO();
 		//contactoDAO.listar();
+		
+		
+		//Cargo todos los objetos para poder insertarlo en kaskeidelmao
+		
+		Domicilio d = new Domicilio();
+		DomicilioDAO dDAO = new DomicilioDAO();
+		
+		//d.setIdDomicilio(4);
+		d.setCalle("colon");
+		d.setNoCalle("744");
+		d.setPais("AR");
+		
+		//dDAO.insertar(d);
+		
+		Contacto c = new Contacto();
+		//c.setIdContacto(3);
+		c.setTelefono("2262-500777");
+		c.setEmail("nahuel.di.fiore@gmail.com");
+		
+		Alumno a = new Alumno();
+		//a.setIdAlumno(3);
+		a.setDomicilio(d);
+		a.setContacto(c);
+		a.setNombre("nahuel");
+		a.setApellido("Di Fiore");
+		
+		AlumnoDAO alumnoDAO = new AlumnoDAO();
+		
+		alumnoDAO.insertar(a);
 		
 	}
 }
