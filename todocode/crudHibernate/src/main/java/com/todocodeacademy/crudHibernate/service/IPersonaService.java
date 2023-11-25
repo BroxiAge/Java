@@ -18,4 +18,6 @@ public interface IPersonaService {
                              String nuevoNombre, String nuevoApellido,
                              int nuevaEdad);
 
+    public void editPersona(Persona per);
+
 }
