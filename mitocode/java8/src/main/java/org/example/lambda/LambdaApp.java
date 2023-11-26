@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LambdaApp {
 
-    public void calcular() {
+    public void sintaxis() {
 
         /*
         IOperacion operacion = new IOperacion() {
@@ -27,10 +27,10 @@ public class LambdaApp {
             return (x+y) + a;
         };*/
 
-        //IOperacion operacion = (x,y) -> (x+y)/2;
+        IOperacion operacion = (x,y) -> (x+y)/2;
 
-        IOperacion operacion = () -> 2;
-        System.out.println(operacion.calcularPromedio());
+        //IOperacion operacion = () -> 2;
+        //System.out.println(operacion.calcular());
     }
 
     public void ordenar() {
@@ -60,6 +60,6 @@ public class LambdaApp {
     public static void main(String[] args) {
         LambdaApp lambdaApp = new LambdaApp();
         //lambdaApp.ordenar();
-        lambdaApp.calcular();
+        lambdaApp.sintaxis();
     }
 }
