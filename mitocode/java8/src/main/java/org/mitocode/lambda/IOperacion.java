@@ -1,4 +1,4 @@
-package org.example.lambda;
+package org.mitocode.lambda;
 
 @FunctionalInterface
 public interface IOperacion {

@@ -1,4 +1,4 @@
-package org.example.lambda;
+package org.mitocode.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;

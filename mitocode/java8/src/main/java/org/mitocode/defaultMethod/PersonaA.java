@@ -1,4 +1,4 @@
-package org.example.defaultMethod;
+package org.mitocode.defaultMethod;
 
 public interface PersonaA {
     public void caminar();

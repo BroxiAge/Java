@@ -1,11 +1,11 @@
-package org.example.finterface;
+package org.mitocode.finterface;
 
-import org.example.lambda.IOperacion;
+import org.mitocode.lambda.IOperacion;
 
 public class FuncInterApp {
 
     public double operar (double x, double y) {
-        IOperacion op = Double::sum;
+        IOperacion op = Double::sum; //Method Reference
         return op.calcular(x,y);
     }
     public static void main(String[] args) {
