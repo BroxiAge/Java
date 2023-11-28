@@ -1,4 +1,4 @@
-package org.mitocode.defaultMethod;
+package org.mitocode.defaultmethod;
 
 public class DefaultMethod implements PersonaA, PersonaB{
     @Override
