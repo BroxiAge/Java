@@ -1,0 +1,35 @@
+Congreso
+
+    -List<Evaluador> evaluadorList;
+
+Evaluador
+
+    -tipoEvaluador
+        1. general
+        2. experto
+
+    -List<String> temasConocidosList;
+    -----------------------------------
+
+    soyApto(trabajo) //Logica: Soy apto si y solo si, todos los temas del trabajo estan cubiertos por mis temas conocidos.
+
+EvaluadorPoster extends Evaluador
+
+    //Sobreescribo este metodo
+    soyApto(trabajo) //Cambio la logica, soy apto si tengo match con AL MENOS 1 palabra del trabajo.
+
+Trabajo
+
+    -tipoTrabajo //Puede ser:
+        1. articulo
+        2. resumen
+        3. poster
+
+    -List<String> temasDelTrabajoList;
+
+
+
+Ej normal:
+
+Evaluador
+    -matematica, informatica, filosofia.
