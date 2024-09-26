@@ -9,20 +9,23 @@ public class CongresoMain {
         e.agregarTema("informatica");
         e.agregarTema("filosofia");
 
-        Evaluador ep = new EvaluadorPoster();
-        ep.agregarTema("matematica");
-        //ep.agregarTema("otrotema");
 
-        Trabajo t = new Trabajo();
+        //ARTICULO o RESUMEN
+        Trabajo t = new Trabajo("articulo");
         t.agregarPalabraClave("matematica");
         t.agregarPalabraClave("informatica");
         t.agregarPalabraClave("arte");
 
+        // POSTER
+        Trabajo tp = new TrabajoPoster("poster");
+        tp.agregarPalabraClave("filosofia");
+
+
         Congreso c = new Congreso();
         c.agregarEvaluador(e);
-        c.agregarEvaluador(ep);
         c.agregarTrabajo(t);
+        c.agregarTrabajo(tp);
 
-        c.ponerALaburarATodos();
+        c.asignarTrabajosAEvaluadores();
     }
 }
