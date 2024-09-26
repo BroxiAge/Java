@@ -21,6 +21,10 @@ public class FarmaciaMain {
 
         //farmacia.buscarMedicamentosPorPrecioMenorA(31);
 
-        farmacia.buscarPorSintoma("tos");
+        /* Aca se deberia crear 1 filtro de cada tipo segun la busqueda, y de ultima concatenar fiultros con el and o el or para luego ir a buscar el medicamentpo  pero soy demaciado vago para probarlo xd*/
+
+
+
+        //farmacia.buscarMedicamento();
     }
 }
