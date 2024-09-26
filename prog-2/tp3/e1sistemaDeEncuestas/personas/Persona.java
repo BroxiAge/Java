@@ -1,8 +1,5 @@
-package tp3.e1sistemaDeEncuestas;
+package tp3.e1sistemaDeEncuestas.personas;
 
 public class Persona {
 
-    private String nombre;
-
-    
 }

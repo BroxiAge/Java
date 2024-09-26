@@ -1,0 +1,12 @@
+
+Œ
+java:S1192"JDefine a constant instead of duplicating this literal "twd genre" 3 times.(ÂÁ¬R8ÕÂÆ„™2J$8f4e8028-d31b-4a69-ba23-d03dd9fb8e4a
+
+java:S1192"KDefine a constant instead of duplicating this literal "twd author" 3 times.(ÂÁ¬R8ÕÂÆ„™2J$ff45deb7-c1a3-4cbc-b94e-b182c2bf69c3
+“
+java:S1192"QDefine a constant instead of duplicating this literal "The walking dead" 3 times.(ÂÁ¬R8ÕÂÆ„™2J$9c3379db-ab5c-4196-b2a1-7a85ea0722f7
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‰êÁ¡ıÿÿÿÿ8ÖÂÆ„™2J$3a89506e-5268-4c59-95a2-0db4fa328ffc
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¶‰ë±ùÿÿÿÿ8×ÂÆ„™2J$3da79293-5631-4b3e-8667-0f4e00bdd004
+~	java:S125"<This block of commented-out lines of code should be removed.(ÿ Àè8ãÂÆ„™2J$a2a54f8e-ce0c-4c47-9a80-235a42e787cb
+r	java:S106%"+Replace this use of System.out by a logger.(„ƒÍµûÿÿÿÿ8åÂÆ„™2J$80ff3a70-b688-47af-989b-62f21a4da2e8
+m	java:S106("+Replace this use of System.out by a logger.(«¾í8åÂÆ„™2J$d2a57864-8a8b-49a6-9b67-3a49422c4d15

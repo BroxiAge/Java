@@ -1,8 +1,8 @@
 package tp2.e2agendapersonal;
 
-import java.time.*;
+import java.time.LocalDateTime;
 
-public class agendaPersonalMain {
+public class PersonalAgendaMain {
 
     public static void main(String[] args) {
 
@@ -23,10 +23,14 @@ public class agendaPersonalMain {
 
         /////////////////////////////
 
-        MeetingAgenda personalAgenda = new MeetingAgenda();
+        Agenda personalAgenda = new Agenda();
         personalAgenda.addMeeting(m1);
         personalAgenda.addMeeting(m2);
         personalAgenda.describeMeetingList();
 
     }
 }
+
+/* TODO: CONSULTAS
+Esta bien el metodo de addMeeting en la agenda?
+ */

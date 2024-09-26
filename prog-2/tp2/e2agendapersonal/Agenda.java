@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeetingAgenda {
+public class Agenda {
 
     private final List<Meeting> meetingList = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class MeetingAgenda {
     }
 
     private boolean isValidDate(Meeting newMeeting) {
-
+        //TODO: Todo este codigo, debe ir en meeting.
         for (Meeting existingMeeting : meetingList) {
             LocalDateTime existingStart = existingMeeting.getMeetingDate();
             LocalDateTime existingEnd = existingStart.plusMinutes(existingMeeting.getMeetingDurationInMinutes());

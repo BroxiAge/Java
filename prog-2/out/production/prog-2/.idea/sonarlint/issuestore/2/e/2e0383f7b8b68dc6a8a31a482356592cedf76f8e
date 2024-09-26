@@ -1,0 +1,6 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¼Ü†š8•ˆâæž2J$0e4b556d-a80b-4f3c-a3d6-8cd3de1f13b2
+¢
+java:S1450"ZRemove the "encenderLuz" field and declare it as a local variable in the relevant methods.(ˆ¡ø£üÿÿÿÿ8™ˆâæž2J$19c8a89e-e62a-44d3-bbad-ae8b8f9e2809
+r	java:S106"+Replace this use of System.out by a logger.(··²»ùÿÿÿÿ8Ð¦ãæž2J$fa7b46d0-8b50-4ce3-8687-b5ded4ca63fd
+r	java:S106"+Replace this use of System.out by a logger.(¯€‚žúÿÿÿÿ8Ñ¦ãæž2J$e1b3cd86-4e11-4209-b4e3-7744997b70d1

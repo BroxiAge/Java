@@ -1,5 +1,6 @@
-package tp5.e7;
+package tp5.e7FacturacionEmpleados;
 
+//Podria llamarse empleado, o incluso podriia haer 1 clase que extienda de Persona para agregar el sueldo mensual.
 public class Persona {
 
     private String nombre;

@@ -1,22 +1,21 @@
-package tp3.e2fabricaDeMuebles;
+package tp3.e2fabricaDeMuebles.muebles;
 
 public class Mueble {
 
+    private String nombreMueble;
     private double peso;
     private double costoDeFabricacion;
     private double valorDeVenta;
     private String tipoMadera;
     private String color;
 
-    public Mueble() {
-    }
-
-    public Mueble(double peso, double costoDeFabricacion, double valorDeVenta, String tipoMadera, String color) {
+    public Mueble(double peso, double costoDeFabricacion, double valorDeVenta, String tipoMadera, String color, String nombreMueble) {
         this.peso = peso;
         this.costoDeFabricacion = costoDeFabricacion;
         this.valorDeVenta = valorDeVenta;
         this.tipoMadera = tipoMadera;
         this.color = color;
+        this.nombreMueble = nombreMueble;
     }
 
     public double getPeso() {
@@ -57,5 +56,24 @@ public class Mueble {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getNombreMueble() {
+        return nombreMueble;
+    }
+
+    public void setNombreMueble(String nombreMueble) {
+        this.nombreMueble = nombreMueble;
+    }
+
+    @Override
+    public String toString() {
+        return "Mueble{" +
+                "peso=" + peso +
+                ", costoDeFabricacion=" + costoDeFabricacion +
+                ", valorDeVenta=" + valorDeVenta +
+                ", tipoMadera='" + tipoMadera + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
