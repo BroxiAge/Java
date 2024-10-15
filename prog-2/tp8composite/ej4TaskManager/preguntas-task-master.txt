@@ -1,0 +1,10 @@
+1. ¿Como hago en la clase Tarea Compusta Metalmecanica el +15?
+    Porque para hacer el +10 en la compuesta, le agregue un +10 en la simple... pero ahora, no tengo como diferenciarlas
+
+2. ¿Los atributos estan bien en la clase TareaSimple? ¿Se pueden llevar mas arriba?
+
+3. ¿El hecho de armar listas, devolverlas y mergearlas, esta permitido? por ej
+
+4. Chequear clase metalnoseque, porque por ej.
+    a. implementar obtener costo, no lo hago porque ya uso el del padre que esta ok
+    b.
