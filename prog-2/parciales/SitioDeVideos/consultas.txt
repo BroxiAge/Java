@@ -1,0 +1,6 @@
+1. En el caso de la implementacion de buscar, que usa las condiciones.
+
+A la hora de hacer el ordenamiento. ¿Tengo que implementar la interfaz comparable y hacer el override de compare to de esa manera? //revisar en clase Video
+
+
+2. Preguntar por grupos sponsoreados??
