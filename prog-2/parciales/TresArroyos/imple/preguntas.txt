@@ -1,0 +1,33 @@
+1. En el caso de Figurita, el override de compareTo. En el caso de que la resta de la figurita actual menos la que llega por parametro de 0
+ se debe realizar el ordenamiento de forma alfabetica. Pero en el retorno, no estaria devolviendo un string?
+
+ Ej:
+
+ @Override
+     public int compareTo(Figurita f) {
+         double resultado = this.getPrecio() - f.getPrecio();
+
+         if (resultado == 0){
+             return  this.getNombre().compareTo(f.getNombre());
+         }
+
+         if (resultado > 0){
+             return 1;
+         }else
+             return -1;
+
+     }
+
+     vs
+
+        /* @Override
+         public int compareTo(Figurita f) {
+         //compare de double, da como resultado 1 o -1
+             int resultado = Double.compare(this.getPrecio(), f.getPrecio());
+
+             if (resultado == 0) {
+                 return this.getNombre().compareTo(f.getNombre());
+             }
+
+             return resultado;
+         }*/
